@@ -1,21 +1,39 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useMemo, useState } from 'react';
 
-type ThemeType = 'dark' | 'light' | 'system';
+type ThemeType = 'dark' | 'light' | 'system' | 'loading';
 
 const ThemeColor = createContext<{
     setTheme: (theme: ThemeType) => void;
     themeActive: ThemeType;
 }>({
     setTheme: () => undefined,
-    themeActive: 'system',
+    themeActive: 'loading',
 });
 
 const ThemeContextProvider: React.FC<{ children: JSX.Element[] | JSX.Element }> = ({
     children,
 }) => {
-    const eventTheme = new Event('themeUpdate');
-    const [themeActive, setThemeActive] = useState<ThemeType>('system');
     const nameAttr = 'theme';
+    const eventTheme = new Event('themeUpdate');
+    const [themeActive, setThemeActive] = useState<ThemeType>('loading');
+
+    const setTheme = (theme: ThemeType) => {
+        if (theme === 'system') {
+            localStorage.removeItem(nameAttr);
+        } else {
+            localStorage[nameAttr] = theme;
+        }
+
+        document.dispatchEvent(eventTheme);
+    };
+
+    const value = useMemo(
+        () => ({
+            setTheme,
+            themeActive,
+        }),
+        [themeActive, setTheme]
+    );
 
     useEffect(() => {
         const matchMedia = window.matchMedia('(prefers-color-scheme: dark)');
@@ -50,17 +68,7 @@ const ThemeContextProvider: React.FC<{ children: JSX.Element[] | JSX.Element }> 
         };
     });
 
-    const setTheme = (theme: ThemeType) => {
-        if (theme === 'system') {
-            localStorage.removeItem(nameAttr);
-        } else {
-            localStorage[nameAttr] = theme;
-        }
-
-        document.dispatchEvent(eventTheme);
-    };
-
-    return <ThemeColor.Provider value={{ setTheme, themeActive }}>{children}</ThemeColor.Provider>;
+    return <ThemeColor.Provider value={value}>{children}</ThemeColor.Provider>;
 };
 
 export type { ThemeType };

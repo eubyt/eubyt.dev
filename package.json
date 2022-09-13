@@ -1,0 +1,15 @@
+{
+    "name": "eubyt.dev",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "git@github.com:eubyt/eubyt.dev.git",
+    "author": "Eubyt <eubyt+github@proton.me>",
+    "license": "MIT",
+    "private": true,
+    "workspaces": {
+        "packages": [
+            "config/*",
+            "workspaces-pages/*"
+        ]
+    }
+}
