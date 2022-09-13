@@ -5,7 +5,6 @@
         "editorconfig.editorconfig",
         "dbaeumer.vscode-eslint",
         "infeng.vscode-react-typescript",
-        "donjayamanne.githistory",
-        "Gruntfuggly.todo-tree"
+        "gruntfuggly.todo-tree"
     ]
 }
