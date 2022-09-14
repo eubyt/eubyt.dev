@@ -9,8 +9,8 @@
     "scripts": {
         "dev:portfolio": "yarn workspace @eubyt/portfolio dev",
         "build:portfolio": "yarn workspace @eubyt/portfolio build",
-        "dev:outher": "yarn workspace @eubyt/outher dev",
-        "build:outher": "yarn workspace @eubyt/outher build"
+        "dev:other": "yarn workspace @eubyt/other dev",
+        "build:other": "yarn workspace @eubyt/other build"
     },
     "workspaces": {
         "packages": [
