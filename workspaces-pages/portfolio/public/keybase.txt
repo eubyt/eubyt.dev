@@ -1,0 +1,87 @@
+==================================================================
+https://keybase.io/eubyt
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://eubyt.dev
+  * I am eubyt (https://keybase.io/eubyt) on keybase.
+  * I have a public key with fingerprint 44D9 D7BB 5DD0 212B 6307  EBC3 60E8 D686 4387 90AC
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101a91cf175652d5b11958ecc04634d59790ee52d61582609ca799659ca32db7d200a",
+      "fingerprint": "44d9d7bb5dd0212b6307ebc360e8d686438790ac",
+      "host": "keybase.io",
+      "key_id": "60e8d686438790ac",
+      "kid": "0101a91cf175652d5b11958ecc04634d59790ee52d61582609ca799659ca32db7d200a",
+      "uid": "802c29076145b66095c1c2e59cd66a19",
+      "username": "eubyt"
+    },
+    "merkle_root": {
+      "ctime": 1663157868,
+      "hash_meta": "840cc7d5618d1442fe06e9ccf88aac64518dbdb184a977e599f0080b108fd9bb",
+      "seqno": 23193567
+    },
+    "revoke": {
+      "sig_ids": [
+        "aa4e022b0ed46ca81fab9cd2ba0861fa277dee487a61737550dd1546b394c4c00f"
+      ]
+    },
+    "service": {
+      "hostname": "eubyt.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1663157949,
+  "expire_in": 157680000,
+  "prev": "55273a87b83dc3a6f4cd0a58ba5d12c72a8e45c2855a9016dc4535ee8603e48c",
+  "seqno": 12,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMPPAnicrVNrbBVFGL2lD+Wm1AKVCgQIiyRImzKzuzM7e5NiDAEVEEyxSKF4Ozsz
+t7203G3v3b6ohUKgPNtUghipqEBbhCoUgpbWolArGDTSFnkEYhqiMchDiyAgJtTZ
+RqMm/nT/TOab851zvjM7XcOiPd6onKvnq2esr3s/6svOomIPm3jyWIVi2bxc8VUo
++WJwEQVcRBx/fpArPgVAAKkJWQAaCCOVIwtCExHBGNCxpnNkGiYQQp5giIiKgcmo
+YZoYyVVTuWVwFQCqpCqBYChXhAvDwZAjaXWdm9ywLMQ5UKFqYQ0YwmIaBoJwTLCu
+EclLmWzMsyNuhzRn0YhIC9qyJjf+QXv/gf+ffRcP0hGgMtUEBoY6srBEIwaZKiSa
+Y0yh6QIjIhyiy4VEi2Kr3FEqU5XlIpxfIPxh23bcZJkTdM8hxhpEBsFETkcjef7l
+wqGuiA4YMzjCkHCo62pAACxMxgKEUMqwjmTd4hYkOjUNQ4qbAQAIsCAgAW5aljQR
+EUUhW/GpGjQ1hA1pISxK7HzhqkeCuTK0iOJbolCqC6CqFhBcx4wSGKCWHEW1KCBY
+blTD4ELoxKAYGpqBEOAcIh1bmqkznQEQUJZWumrhkiAbJHdv6Z/Tp3FRIv0Uhm3H
+ZnaBLOc5TmHE56bilBe6uFJh+f9k8FvBEJc/iOwoEeFI0A7JlCTy34GZupmqiLLC
+YFj4gy4CGZgA+bk6Us6nIKQaGiWGRTTONIoDOuOAImJRxKHKDJUSoSOmEoSoCSDm
+TEcaEoJgoMlx2d8JQlX6pLmSU8YWok5xWCiVnSeyYzxRXk9c7BD35Xi8QxP/ek9r
+nETPwaoD6bFBf1xv1y+Vu/dWJ5ef3ze3Iu+t1WM7ctd130jivcmlk1567fgHLQ2/
+d2buGugH3XOe6ZqckXR9d2Z6XVxc0eTmbTem1H42Nvpw9+KUwu9bmiu+mFW9f4d3
+wYTt7z5vnpp4sbktPrLLU990/5Wdmy+V93fUr2ttae2/N6b4ytSYQxOfLZ23MnHX
+3SVbo9+MxK0fPjxhRe6qS5c3m7HtpQlfHcbr26qa8J2rn95LHvj4vWtpAz+WbX8k
+aQOMbX67oLZhalzqlWXeI0+WLyz4bWZjQltVfMyiH7ZnHVuccrZ9TN1j+rSFq487
+L+d4WHbzpm9H2SdmbnnQNdA5/sbVm0MvLBuxr2lk1eyyxIEncqanxB89fa2DhlYd
+vZ3S09vV+XRSzZDDa1KL3jn/3Db+UcKhiz3GkR1Zt+ZffDCncX72PtTf8d3ULV+/
+WLQn03ssb8n+I+hcy6m9a5o2paW9Pi16bc6J0SvitfuxcN7Sk33rFtB20VB/O+nn
+4oza080Hs/smpLduGHdmtL/+8wOR7sdzalY+PNM3/tzJ2in2XTXHO7w6D+7/0L9h
+8fXWyXWzVmTOaGR9vc7WqvZfL29MSSAIJN/66ZPG+3ZobcrS3XP3bLu54422ECmI
+b7vX/tSk3LpRMS+MLKrO6Bl35/I3Nb65WcMWPJzettZ71omavaln2PzMjRtPLUrf
+mVb/6gXRwPNnPDoi4w9Nq/nF
+=Rc++
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/eubyt
+
+==================================================================
