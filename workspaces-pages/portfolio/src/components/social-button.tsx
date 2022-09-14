@@ -7,6 +7,7 @@ import {
     FaEnvelope,
     FaDiscord,
     FaTelegram,
+    FaKeybase,
 } from 'react-icons/fa';
 
 type SocialType =
@@ -16,7 +17,8 @@ type SocialType =
     | 'instagram'
     | 'email'
     | 'discord'
-    | 'telegram';
+    | 'telegram'
+    | 'keybase';
 
 const icon = {
     github: <FaGithub />,
@@ -26,6 +28,7 @@ const icon = {
     email: <FaEnvelope />,
     discord: <FaDiscord />,
     telegram: <FaTelegram />,
+    keybase: <FaKeybase />,
 };
 
 const ButtonSocial = (social: { type: SocialType; link: string }) => (

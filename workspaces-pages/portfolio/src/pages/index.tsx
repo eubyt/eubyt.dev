@@ -17,7 +17,7 @@ const socialLinks: Array<{
     },
     {
         name: 'linkedin',
-        link: 'https://www.linkedin.com/in/eubyt',
+        link: 'https://www.linkedin.com/in/adrian.cesar',
     },
     {
         name: 'twitter',
@@ -26,6 +26,10 @@ const socialLinks: Array<{
     {
         name: 'instagram',
         link: 'https://www.instagram.com/eubyt',
+    },
+    {
+        name: 'keybase',
+        link: 'https://www.keybase.io/eubyt',
     },
 ];
 
@@ -77,6 +81,43 @@ const Home: NextPage = () => (
                             <ButtonSocial type={social.name} link={social.link} />
                         </div>
                     ))}
+                </div>
+
+                <div className="text-center">
+                    <div className="text-sm text-zinc-800 dark:text-white">
+                        <a
+                            href="https://keybase.io/eubyt/key.asc"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline"
+                            title={`Chave pública do eubyt`}
+                        >
+                            Key PGP
+                        </a>{' '}
+                        <span className="text-sm text-zinc-800 dark:text-white">|</span>{' '}
+                        <a
+                            href="https://keybase.io/eubyt/pgp_keys.asc"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline"
+                            title={`Todas as chaves públicas do eubyt`}
+                        >
+                            List All Keys PGP
+                        </a>
+                    </div>
+                    <div className="text-sm text-zinc-800 dark:text-white">
+                        Se você não sabe como criptografar usando PGP acesse o{' '}
+                        <a
+                            href="https://keybase.io/encrypt#eubyt"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-zinc-900 hover:underline dark:text-yellow-400"
+                            title={`Site do keybase para criptografar mensagens`}
+                        >
+                            Keybase
+                        </a>
+                        .
+                    </div>
                 </div>
             </Card>
         </div>
