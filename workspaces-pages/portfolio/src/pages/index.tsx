@@ -5,6 +5,7 @@ import ButtonSocial from '../components/social-button';
 
 import type { NextPage } from 'next';
 import type { SocialType } from '../components/social-button';
+import Head from 'next/head';
 
 const socialLinks: Array<{
     name: SocialType;
@@ -30,9 +31,14 @@ const socialLinks: Array<{
 
 const Home: NextPage = () => (
     <>
+        <Head>
+            <title>eubyt (Adrian César) | About</title>
+        </Head>
+
         <div className="absolute flex w-screen flex-col items-end p-6">
             <SwitchTheme />
         </div>
+
         <div className="flex h-screen w-screen items-center justify-center">
             <Card className="m-6 flex max-w-screen-md flex-col space-y-6">
                 <div className="flex flex-col text-center">

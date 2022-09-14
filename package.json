@@ -7,7 +7,10 @@
     "license": "MIT",
     "private": true,
     "scripts": {
-        "dev:portfolio": "yarn workspace @eubyt/portfolio dev"
+        "dev:portfolio": "yarn workspace @eubyt/portfolio dev",
+        "build:portfolio": "yarn workspace @eubyt/portfolio build",
+        "dev:outher": "yarn workspace @eubyt/outher dev",
+        "build:outher": "yarn workspace @eubyt/outher build"
     },
     "workspaces": {
         "packages": [

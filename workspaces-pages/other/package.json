@@ -1,7 +1,7 @@
 {
-    "name": "@eubyt/portfolio",
+    "name": "@eubyt/other",
     "version": "0.1.0",
-    "description": "Meu portfolio e site pessoal.",
+    "description": "Paginas que fazem funções diferentes, aleatórias ou que não se encaixam no contexto do projeto. Tudo que está aqui é um experimento.",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
