@@ -120,6 +120,7 @@ const Home: NextPage = () => (
                         </div>
                     </div>
                 </Card>
+
                 <Card className="flex flex-col space-y-6 md:rounded-lg">
                     <div className="flex flex-col text-center">
                         <h1 className="text-2xl font-bold  text-zinc-800 dark:text-white">
