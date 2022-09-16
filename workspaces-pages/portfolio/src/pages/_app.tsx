@@ -6,6 +6,8 @@ import Script from 'next/script';
 
 function MyApp({ Component, pageProps }: AppProps) {
     const googleAnalyticsId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+    const googleAdsense = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE;
+
     return (
         <>
             {googleAnalyticsId && (
@@ -23,6 +25,15 @@ function MyApp({ Component, pageProps }: AppProps) {
                 `}
                     </Script>
                 </>
+            )}
+
+            {googleAdsense && (
+                <Script
+                    async
+                    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleAdsense}`}
+                    strategy="afterInteractive"
+                    crossOrigin="anonymous"
+                />
             )}
 
             <ThemeContextProvider>
