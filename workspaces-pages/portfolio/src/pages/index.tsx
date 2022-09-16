@@ -39,13 +39,13 @@ const Home: NextPage = () => (
             <title>eubyt (Adrian César) | About</title>
         </Head>
 
-        <div className="absolute flex w-screen flex-col items-end p-6">
+        <div className="flex w-screen flex-col items-end p-6 xl:absolute">
             <SwitchTheme />
         </div>
 
-        <div className="flex h-screen w-screen flex-col items-center justify-center space-y-6">
-            <div className="max-w-screen-md">
-                <Card className="m-6 flex max-w-screen-md flex-col space-y-6">
+        <div className="flex h-screen w-screen flex-col items-center xl:justify-center">
+            <div className="max-w-screen-md md:m-6 space-y-6">
+                <Card className="flex max-w-screen-md flex-col space-y-6 md:rounded-lg">
                     <div className="flex flex-col text-center">
                         <h1 className="text-2xl font-bold text-zinc-800 dark:text-white">
                             Olá, eu sou o Adrian CF 👋
@@ -56,7 +56,6 @@ const Home: NextPage = () => (
                             internet.
                         </p>
                     </div>
-
                     <div className="flex flex-col">
                         <h2 className="text-xl font-bold text-zinc-800 dark:text-white">
                             Tecnologias
@@ -69,7 +68,6 @@ const Home: NextPage = () => (
                             <i>Node.Js, Typescript, MongoDB, MySQL e entre outros</i>.
                         </p>
                     </div>
-
                     <div className="flex flex-col">
                         <h2 className="text-xl font-bold text-zinc-800 dark:text-white">IDE ☕</h2>
                         <p className="text-zinc-800 dark:text-white">
@@ -78,7 +76,6 @@ const Home: NextPage = () => (
                             desenvolver.
                         </p>
                     </div>
-
                     <div className="flex justify-center">
                         {socialLinks.map((social) => (
                             <div className="mr-2" key={social.link}>
@@ -86,7 +83,6 @@ const Home: NextPage = () => (
                             </div>
                         ))}
                     </div>
-
                     <div className="text-center">
                         <div className="text-sm text-zinc-800 dark:text-white">
                             <a
@@ -125,7 +121,7 @@ const Home: NextPage = () => (
                     </div>
                 </Card>
 
-                <Card className="m-6 flex flex-col space-y-6">
+                <Card className="flex flex-col space-y-6 md:rounded-lg">
                     <div className="flex flex-col text-center">
                         <h1 className="text-2xl font-bold  text-zinc-800 dark:text-white">
                             📙 Lista de projetos 📙

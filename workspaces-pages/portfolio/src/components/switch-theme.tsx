@@ -53,7 +53,7 @@ const SwitchTheme = () => {
         <>
             <div ref={buttonRef}>
                 <button
-                    className="mb-4 text-4xl text-zinc-800 delay-200 hover:!text-slate-400 hover:transition-all dark:text-white"
+                    className="text-4xl text-zinc-800 delay-200 hover:!text-slate-400 hover:transition-all dark:text-white relative"
                     onClick={onClick}
                 >
                     <span className="dark:hidden">
@@ -66,7 +66,7 @@ const SwitchTheme = () => {
             </div>
 
             {open && (
-                <Card padding="py-3">
+                <Card padding="py-3 absolute top-20 rounded-lg">
                     <div
                         className="flex w-36 flex-col space-y-4 text-zinc-800 dark:text-white"
                         ref={cardRef}
