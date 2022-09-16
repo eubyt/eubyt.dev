@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import type { AppProps } from 'next/app';
 import { ThemeContextProvider } from '../context/theme-color';
 import '../styles/main.css';
