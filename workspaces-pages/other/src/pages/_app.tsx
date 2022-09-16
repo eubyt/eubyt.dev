@@ -27,7 +27,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                     </Script>
                 </>
             )}
-
             {googleAdsense && (
                 <Script
                     async
