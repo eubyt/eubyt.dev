@@ -1,5 +1,10 @@
 const eslintConfig = require('@config/eslint-config');
 
+eslintConfig.overrides.push({
+    extends: ['next'],
+    files: ['*.tsx', '*.jsx'],
+});
+
 module.exports = {
     ...eslintConfig,
     settings: {
