@@ -30,6 +30,8 @@ export default async function middleware(req: NextRequest) {
         },
     };
 
+    console.log(hostList, domainName, subdomain);
+
     if (url.pathname.startsWith(`/_subdomains`) || url.pathname.startsWith(`/index`)) {
         url.pathname = `/404`;
         return NextResponse.rewrite(url);
