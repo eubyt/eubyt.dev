@@ -12,5 +12,8 @@ module.exports = {
             config: './tailwind.config.js',
             whitelist: ['bg-alt\\-(black)'],
         },
+        next: {
+            rootDir: 'apps/nextjs-eubyt-dev',
+        },
     },
 };

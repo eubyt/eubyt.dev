@@ -1,6 +1,5 @@
 import React from 'react';
 import type { AppProps } from 'next/app';
-import { ThemeContextProvider } from '../context/theme-color';
 import '../styles/main.css';
 import Script from 'next/script';
 
@@ -36,9 +35,7 @@ const App = ({ Component, pageProps }: AppProps) => {
                 />
             )}
 
-            <ThemeContextProvider>
-                <Component {...pageProps} />
-            </ThemeContextProvider>
+            <Component {...pageProps} />
         </>
     );
 };
