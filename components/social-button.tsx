@@ -9,7 +9,7 @@ import {
     FaTelegram,
     FaKeybase,
 } from 'react-icons/fa';
-import type { SocialType } from '@config/eubyt-info';
+import type { SocialType } from '../config';
 
 const icon = {
     github: <FaGithub />,

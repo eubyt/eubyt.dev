@@ -4,9 +4,8 @@ import SwitchTheme from '../components/switch-theme';
 import ButtonSocial from '../components/social-button';
 import Head from 'next/head';
 import { ThemeContextProvider } from '../context/theme-color';
-import { social } from '@config/eubyt-info';
-
 import type { NextPage } from 'next';
+import { social } from '../config';
 
 const ButtonSwitchTheme = () => (
     <div className="flex w-screen flex-col items-end p-6 xl:absolute">
