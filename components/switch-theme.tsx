@@ -53,7 +53,7 @@ const SwitchTheme = () => {
         <>
             <div ref={buttonRef}>
                 <button
-                    className="text-4xl text-zinc-800 delay-200 hover:!text-slate-400 hover:transition-all dark:text-white relative"
+                    className="relative text-4xl text-zinc-800 delay-200 hover:!text-slate-400 hover:transition-all dark:text-white"
                     onClick={onClick}
                 >
                     <span className="dark:hidden">

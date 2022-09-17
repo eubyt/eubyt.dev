@@ -4,7 +4,7 @@ module.exports = {
         es2021: true,
         node: true,
     },
-    extends: ['xo', 'prettier'],
+    extends: ['xo', 'prettier', 'next', 'next/core-web-vitals', 'plugin:@next/next/recommended'],
     overrides: [
         {
             extends: ['xo-typescript', 'prettier'],
@@ -17,7 +17,6 @@ module.exports = {
                 'prettier',
                 'plugin:tailwindcss/recommended',
                 'plugin:react/recommended',
-                'next',
             ],
             files: ['*.tsx', '*.jsx'],
         },
