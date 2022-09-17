@@ -17,6 +17,7 @@ module.exports = {
                 'prettier',
                 'plugin:tailwindcss/recommended',
                 'plugin:react/recommended',
+                'next',
             ],
             files: ['*.tsx', '*.jsx'],
         },
@@ -27,4 +28,13 @@ module.exports = {
     },
     plugins: [],
     rules: {},
+    settings: {
+        tailwindcss: {
+            config: './tailwind.config.js',
+            whitelist: ['bg-alt\\-(black)'],
+        },
+        next: {
+            rootDir: './',
+        },
+    },
 };
