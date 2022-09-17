@@ -4,7 +4,7 @@ import { ThemeContextProvider } from '../context/theme-color';
 import '../styles/main.css';
 import Script from 'next/script';
 
-function MyApp({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
     const googleAnalyticsId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
     const googleAdsense = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE;
 
@@ -41,6 +41,6 @@ function MyApp({ Component, pageProps }: AppProps) {
             </ThemeContextProvider>
         </>
     );
-}
+};
 
-export default MyApp;
+export default App;
