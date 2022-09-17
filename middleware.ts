@@ -1,37 +1,55 @@
-import { NextRequest, NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
 export const config = {
-    matcher: ['/', '/_subdomains/:path'],
-};
-
-const getHostnameDataBySubdomain = (subdomain: string | false | undefined) => {
-    switch (subdomain) {
-        case 'other':
-            return {
-                pathName: 'other.eubyt.dev',
-            };
-        default:
-            return null;
-    }
+    matcher: ['/_subdomains/:path'],
 };
 
 export default async function middleware(req: NextRequest) {
     const url = req.nextUrl;
 
-    const hostname = req.headers.get('host');
-    const currentHost =
-        process.env.NODE_ENV === 'production' &&
-        hostname?.replace(`.${process.env.ROOT_DOMAIN}`, '');
+    if (process.env.NODE_ENV !== 'production') {
+        return NextResponse.next();
+    }
 
-    const hostnameData = getHostnameDataBySubdomain(currentHost);
+    const hostList = (req.headers.get('host') ?? 'localhost').split('.');
+    const domainName = hostList.length > 2 ? hostList[1] : hostList[0];
+    const subdomain = hostList.length > 2 ? hostList[0] : false;
 
-    if (hostnameData) {
-        if (url.pathname.startsWith(`/_subdomains`)) {
-            url.pathname = `/404`;
-        } else {
-            console.log('URL 2', req.nextUrl.href);
-            url.pathname = `/_subdomains/${hostnameData.pathName}${url.pathname}`;
+    const redirectConfig: Record<
+        string,
+        {
+            pathName: string;
         }
+    > = {
+        shortener: {
+            pathName: 'shortener.eubyt.dev',
+        },
+        other: {
+            pathName: 'other.eubyt.dev',
+        },
+    };
+
+    if (url.pathname.startsWith(`/_subdomains`) || url.pathname.startsWith(`/index`)) {
+        url.pathname = `/404`;
+        return NextResponse.rewrite(url);
+    }
+
+    switch (domainName) {
+        case 'eubyt':
+            if (subdomain && redirectConfig[subdomain]) {
+                console.log('eubyt.dev >> ', req.nextUrl.href);
+                url.pathname = `/_subdomains/${redirectConfig[subdomain].pathName}${url.pathname}`;
+            }
+
+            break;
+        case 'eub.yt':
+            console.log('eub.yt >> ', req.nextUrl.href);
+            url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}${url.pathname}`;
+
+            break;
+        default:
+            return NextResponse.next();
     }
 
     return NextResponse.rewrite(url);
