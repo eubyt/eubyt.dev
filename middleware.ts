@@ -8,9 +8,9 @@ export const config = {
 export default async function middleware(req: NextRequest) {
     const url = req.nextUrl;
 
-    if (process.env.NODE_ENV.toLowerCase() !== 'production') {
-        return NextResponse.next();
-    }
+    // If (process.env.NODE_ENV.toLowerCase() !== 'production') {
+    //     return NextResponse.next();
+    // }
 
     const hostList = (req.headers.get('host') ?? 'localhost').split('.');
     const domainName = hostList.length > 2 ? hostList[1] : hostList[0];
