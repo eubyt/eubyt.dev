@@ -29,7 +29,8 @@ const App = ({ Component, pageProps }: AppProps) => {
             {googleAdsense && (
                 <Script
                     async
-                    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleAdsense}`}
+                    data-ad-client={googleAdsense}
+                    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`}
                     crossOrigin="anonymous"
                 />
             )}
