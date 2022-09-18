@@ -30,7 +30,11 @@ export default async function middleware(req: NextRequest) {
         },
     };
 
-    console.log(hostList, domainName, subdomain);
+    console.log({
+        subdomain,
+        domainName,
+        href: req.nextUrl.href,
+    });
 
     if (url.pathname.startsWith(`/_subdomains`) || url.pathname.startsWith(`/index`)) {
         url.pathname = `/404`;
@@ -40,13 +44,11 @@ export default async function middleware(req: NextRequest) {
     switch (domainName) {
         case 'eubyt':
             if (subdomain && redirectConfig[subdomain]) {
-                console.log('eubyt.dev >> ', req.nextUrl.href);
                 url.pathname = `/_subdomains/${redirectConfig[subdomain].pathName}${url.pathname}`;
             }
 
             break;
-        case 'eub.yt':
-            console.log('eub.yt >> ', req.nextUrl.href);
+        case 'eub':
             url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}${url.pathname}`;
 
             break;
