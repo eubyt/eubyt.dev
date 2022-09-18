@@ -5,7 +5,7 @@ import SwitchTheme from '../../../components/switch-theme';
 import Card from '../../../components/card';
 
 const ButtonSwitchTheme = () => (
-    <div className="flex w-screen flex-col items-end p-6 xl:absolute">
+    <div className="flex w-full flex-col items-end p-6 xl:absolute">
         <SwitchTheme />
     </div>
 );
@@ -17,7 +17,7 @@ const Shortener = () => (
                 <title>URL Shortener (eub.yt)</title>
             </Head>
             <ButtonSwitchTheme />
-            <div className="flex h-screen w-screen flex-col items-center xl:justify-center">
+            <div className="flex min-h-screen flex-col items-center xl:justify-center">
                 <div className="max-w-screen-md space-y-6 md:m-6">
                     <Card className="max-w-screen-md md:rounded-lg">
                         <div className="text-center">
@@ -45,10 +45,21 @@ const Shortener = () => (
                     </Card>
 
                     <Card className="max-w-screen-md md:rounded-lg">
-                        <div className="text-center">
+                        <div className="flex flex-col-reverse items-center md:flex-row md:justify-between">
+                            <span className="mt-6 text-sm text-zinc-800 dark:text-white md:mt-0">
+                                Desenvolvido por{' '}
+                                <a
+                                    title="Visite o perfil do desenvolvedor (eubyt)."
+                                    href="https://eubyt.dev"
+                                    className="text-zinc-900 hover:underline dark:text-yellow-400"
+                                >
+                                    eubyt
+                                </a>{' '}
+                                ❣️
+                            </span>
                             <button
                                 title="Clique para encurtar a URL."
-                                className="w-full rounded-md bg-zinc-200 py-4 text-zinc-800 hover:bg-gray-300 dark:bg-stone-800 dark:text-white dark:hover:bg-stone-600"
+                                className="w-56 rounded-md bg-zinc-200 py-4 text-zinc-800 hover:bg-gray-300 dark:bg-stone-800 dark:text-white dark:hover:bg-stone-600"
                             >
                                 Encurtar
                             </button>

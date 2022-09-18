@@ -5,6 +5,8 @@
         "editorconfig.editorconfig",
         "dbaeumer.vscode-eslint",
         "infeng.vscode-react-typescript",
-        "gruntfuggly.todo-tree"
+        "gruntfuggly.todo-tree",
+        "mikestead.dotenv",
+        "csstools.postcss"
     ]
 }

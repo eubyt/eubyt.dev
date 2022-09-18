@@ -8,7 +8,7 @@ import type { NextPage } from 'next';
 import { social } from '../config';
 
 const ButtonSwitchTheme = () => (
-    <div className="flex w-screen flex-col items-end p-6 xl:absolute">
+    <div className="flex w-full flex-col items-end p-6 xl:absolute">
         <SwitchTheme />
     </div>
 );
@@ -27,7 +27,7 @@ const CardPresentation = () => {
     );
 
     const BlockTechInfo = () => (
-        <div className="flex flex-col">
+        <article className="flex flex-col">
             <h2 className="text-xl font-bold text-zinc-800 dark:text-white">Tecnologias</h2>
             <p className="text-zinc-800 dark:text-white">
                 Eu uso principalmente <i className="text-zinc-900 dark:text-yellow-400">Next.Js</i>{' '}
@@ -35,17 +35,17 @@ const CardPresentation = () => {
                 aplicações web mas também tenho experiência com{' '}
                 <i>Node.Js, Typescript, MongoDB, MySQL e entre outros</i>.
             </p>
-        </div>
+        </article>
     );
 
     const BlockIde = () => (
-        <div className="flex flex-col">
+        <article className="flex flex-col">
             <h2 className="text-xl font-bold text-zinc-800 dark:text-white">IDE ☕</h2>
             <p className="text-zinc-800 dark:text-white">
                 Eu uso principalmente <i className="text-zinc-900 dark:text-yellow-400">VSCode</i>{' '}
                 para desenvolver.
             </p>
-        </div>
+        </article>
     );
 
     const BlockSocialButtons = () => (
@@ -144,11 +144,11 @@ const Home: NextPage = () => (
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <ButtonSwitchTheme />
-            <div className="flex h-screen w-screen flex-col items-center xl:justify-center">
-                <div className="max-w-screen-md space-y-6 md:m-6">
+            <div className="flex min-h-screen flex-col items-center xl:justify-center">
+                <main className="max-w-screen-md space-y-6 md:m-6">
                     <CardPresentation />
                     <CardProjects />
-                </div>
+                </main>
             </div>
         </ThemeContextProvider>
     </>

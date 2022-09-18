@@ -5,8 +5,12 @@
     "editor.codeActionsOnSave": {
         "source.fixAll": true
     },
+    "search.exclude": {
+        "package-lock.json": true
+    },
     "eslint.enable": true,
     "prettier.enable": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
