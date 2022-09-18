@@ -1,6 +1,20 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
+const redirectConfig: Record<
+    string,
+    {
+        pathName: string;
+    }
+> = {
+    shortener: {
+        pathName: 'shortener.eubyt.dev',
+    },
+    other: {
+        pathName: 'other.eubyt.dev',
+    },
+};
+
 export const config = {
     matcher: ['/', '/_subdomains/:path'],
 };
@@ -15,20 +29,6 @@ export default async function middleware(req: NextRequest) {
     const hostList = (req.headers.get('host') ?? 'localhost').split('.');
     const domainName = hostList.length > 2 ? hostList[1] : hostList[0];
     const subdomain = hostList.length > 2 ? hostList[0] : false;
-
-    const redirectConfig: Record<
-        string,
-        {
-            pathName: string;
-        }
-    > = {
-        shortener: {
-            pathName: 'shortener.eubyt.dev',
-        },
-        other: {
-            pathName: 'other.eubyt.dev',
-        },
-    };
 
     console.log({
         subdomain,

@@ -30,7 +30,6 @@ const App = ({ Component, pageProps }: AppProps) => {
                 <Script
                     async
                     src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleAdsense}`}
-                    strategy="afterInteractive"
                     crossOrigin="anonymous"
                 />
             )}

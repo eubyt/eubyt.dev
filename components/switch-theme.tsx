@@ -53,6 +53,7 @@ const SwitchTheme = () => {
         <>
             <div ref={buttonRef}>
                 <button
+                    title="Clique para alternar o tema da página."
                     className="relative text-4xl text-zinc-800 delay-200 hover:!text-slate-400 hover:transition-all dark:text-white"
                     onClick={onClick}
                 >
@@ -66,13 +67,14 @@ const SwitchTheme = () => {
             </div>
 
             {open && (
-                <Card padding="py-3 absolute top-20 rounded-lg">
+                <Card padding="py-3" className="absolute top-20 rounded-lg">
                     <div
                         className="flex w-36 flex-col space-y-4 text-zinc-800 dark:text-white"
                         ref={cardRef}
                     >
                         {optionsSwitch.map((option) => (
                             <button
+                                title={`Clique para alternar o tema para ${option.name}.`}
                                 className="flex items-center py-2 px-3 hover:bg-zinc-300 disabled:bg-zinc-300 dark:hover:bg-stone-700 dark:disabled:bg-stone-700"
                                 key={option.name}
                                 disabled={themeActive === option.theme}
