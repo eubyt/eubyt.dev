@@ -8,7 +8,7 @@ export const config = {
 export default async function middleware(req: NextRequest) {
     const url = req.nextUrl;
 
-    if (process.env.NODE_ENV !== 'production') {
+    if (process.env.NODE_ENV.toLowerCase() !== 'production') {
         return NextResponse.next();
     }
 
@@ -31,6 +31,8 @@ export default async function middleware(req: NextRequest) {
     };
 
     console.log(hostList, domainName, subdomain);
+    console.log('redirectConfig[domainName]', redirectConfig[domainName]);
+    console.log('redirectConfig[domainName].pathName', redirectConfig[domainName].pathName);
 
     if (url.pathname.startsWith(`/_subdomains`) || url.pathname.startsWith(`/index`)) {
         url.pathname = `/404`;
