@@ -2,7 +2,7 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 export const config = {
-    matcher: ['/_subdomains/:path'],
+    matcher: ['/', '/_subdomains/:path'],
 };
 
 export default async function middleware(req: NextRequest) {
