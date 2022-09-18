@@ -8,9 +8,9 @@ export const config = {
 export default async function middleware(req: NextRequest) {
     const url = req.nextUrl;
 
-    // If (process.env.NODE_ENV.toLowerCase() !== 'production') {
-    //     return NextResponse.next();
-    // }
+    if (process.env.NODE_ENV.toLowerCase() !== 'production') {
+        return NextResponse.next();
+    }
 
     const hostList = (req.headers.get('host') ?? 'localhost').split('.');
     const domainName = hostList.length > 2 ? hostList[1] : hostList[0];
@@ -31,8 +31,6 @@ export default async function middleware(req: NextRequest) {
     };
 
     console.log(hostList, domainName, subdomain);
-    console.log('redirectConfig[domainName]', redirectConfig[domainName]);
-    console.log('redirectConfig[domainName].pathName', redirectConfig[domainName].pathName);
 
     if (url.pathname.startsWith(`/_subdomains`) || url.pathname.startsWith(`/index`)) {
         url.pathname = `/404`;
