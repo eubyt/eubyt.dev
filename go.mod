@@ -1,3 +1,3 @@
-module api.eubyt.dev
+module eubyt.dev/api
 
 go 1.16

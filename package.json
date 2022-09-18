@@ -4,7 +4,7 @@
     "description": "Meu portfolio e repositório pessoal na web.",
     "scripts": {
         "setup": "yarn vercel login && yarn vercel link",
-        "start": "yarn vercel dev",
+        "start": "yarn vercel dev --debug",
         "dev": "yarn start",
         "deploy": "yarn vercel",
         "deploy:prod": "yarn vercel --prod",

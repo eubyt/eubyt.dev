@@ -1,4 +1,4 @@
-package util
+package middlewares
 
 import (
 	"encoding/json"

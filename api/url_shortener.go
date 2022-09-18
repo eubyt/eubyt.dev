@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"api.eubyt.dev/util"
+	util "eubyt.dev/api/middlewares"
 )
 
 type UrlShortener struct {
