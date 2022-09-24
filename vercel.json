@@ -12,7 +12,7 @@
     },
     "headers": [
         {
-            "source": "api/**",
+            "source": "api/url_shortener.go",
             "headers": [
                 { "key": "Access-Control-Allow-Credentials", "value": "true" },
                 { "key": "Access-Control-Allow-Origin", "value": "https://www.eub.yt/" },
