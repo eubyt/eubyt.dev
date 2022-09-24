@@ -11,6 +11,10 @@ type Response struct {
 }
 
 func JsonHandler(w http.ResponseWriter, r *http.Request, data interface{}, statusCode int, cache bool) {
+	w.Header().Set("Access-Control-Allow-Origin", "https://eub.yt")
+	w.Header().Set("Access-Control-Allow-Methods", "POST, GET")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+
 	w.Header().Set("Content-Type", "application/json")
 	if cache {
 		w.Header().Set("Cache-Control", "max-age=0, s-maxage=604800, stale-while-revalidate, public")
