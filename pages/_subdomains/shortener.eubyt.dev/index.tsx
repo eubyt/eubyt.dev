@@ -11,6 +11,7 @@ const ButtonSwitchTheme = () => (
 );
 
 const Shortener = () => {
+    const [error, setError] = React.useState<string | undefined>(undefined);
     const [alias, setAlias] = React.useState<string | undefined>(undefined);
     const [loading, setLoading] = React.useState<boolean>(false);
 
@@ -18,8 +19,23 @@ const Shortener = () => {
         void navigator.clipboard.writeText(text);
     };
 
+    const validUrl = (str: string) => {
+        const pattern = new RegExp(
+            '^(https?:\\/\\/)?' + // Protocol
+                '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // Domain name
+                '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+                '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // Port and path
+                '(\\?[;&a-z\\d%_.~+=-]*)?' + // Query string
+                '(\\#[-a-z\\d_]*)?$',
+            'i'
+        ); // Fragment locator
+
+        return Boolean(pattern.test(str));
+    };
+
     const handlerShortener = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setError(undefined);
 
         if (alias !== undefined) {
             copyToClipboard(alias);
@@ -29,6 +45,11 @@ const Shortener = () => {
         const form = e.currentTarget;
         const url = form.url.value as string;
         if (!url || loading) return;
+
+        if (!validUrl(url)) {
+            setError('A URL não é válida.');
+            return;
+        }
 
         setLoading(true);
 
@@ -101,6 +122,13 @@ const Shortener = () => {
                                     but you can already use it.
                                 </p>
                             </div>
+                            <>
+                                {error && (
+                                    <div className="mt-6 text-center">
+                                        <p className="text-red-500">{error}</p>
+                                    </div>
+                                )}
+                            </>
                         </Card>
                         <Card className="max-w-screen-md md:rounded-lg">
                             <div
