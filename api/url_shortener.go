@@ -69,9 +69,7 @@ func getDocument(path string, value string) map[string]interface{} {
 
 // Based on https://github.com/eubyt/go.eub.yt
 func Handler(w http.ResponseWriter, r *http.Request) {
-	println(strings.ToLower(os.Getenv("NODE_EVN")), "env")
-
-	if strings.ToLower(os.Getenv("NODE_EVN")) == "production" {
+	if strings.ToLower(os.Getenv("NODE_EVN")) != "development" {
 		println("production CORS")
 		w.Header().Set("access-control-allow-credentials", "true")
 		w.Header().Set("access-control-allow-origin", "https://www.eub.yt")
