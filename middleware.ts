@@ -37,24 +37,26 @@ export default async function middleware(req: NextRequest) {
         return NextResponse.next();
     }
 
-    if (url.pathname.startsWith(`/_subdomains`) || url.pathname.startsWith(`/index`)) {
-        url.pathname = `/404`;
-        return NextResponse.rewrite(url);
-    }
+    url.pathname = '/index';
 
-    switch (domainName) {
-        case 'eubyt':
-            if (subdomain && redirectConfig[subdomain]) {
-                url.pathname = `/_subdomains/${redirectConfig[subdomain].pathName}${url.pathname}`;
-            }
+    // If (url.pathname.startsWith(`/_subdomains`) || url.pathname.startsWith(`/index`)) {
+    //     url.pathname = `/404`;
+    //     return NextResponse.rewrite(url);
+    // }
 
-            break;
-        case 'eub':
-            url.pathname = '/index';
-            break;
-        default:
-            return NextResponse.next();
-    }
+    // switch (domainName) {
+    //     case 'eubyt':
+    //         if (subdomain && redirectConfig[subdomain]) {
+    //             url.pathname = `/_subdomains/${redirectConfig[subdomain].pathName}${url.pathname}`;
+    //         }
+
+    //         break;
+    //     case 'eub':
+    //         url.pathname = '/index';
+    //         break;
+    //     default:
+    //         return NextResponse.next();
+    // }
 
     return NextResponse.rewrite(url);
 }
