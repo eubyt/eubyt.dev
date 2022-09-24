@@ -6,15 +6,28 @@ const Redirect = ({ slug }: { slug: string }) => <div>{slug}</div>;
 const getServerSideProps: GetServerSideProps<{
     slug: string;
 }> = async (context) => {
-    const { slug } = context.params as { slug: string };
-    const response = context.res;
+    const { req, query, res, params } = context;
+    const { slug } = params as { slug: string };
+    const domain = process.env.NEXT_PUBLIC_HOST ?? 'http://localhost:3000';
 
-    response.writeHead(301, {
-        Location: `https://eubyt.dev/${slug}`,
-    });
+    const getUrl = await fetch(`${domain}/api/url_shortener?alias=${slug}`);
+    const { data } = (await getUrl.json()) as {
+        message: string;
+        data: {
+            url: string;
+            alias: string;
+        };
+    };
 
-    response.end();
+    if (data?.url) {
+        res.writeHead(301, {
+            Location: data.url,
+        });
+    } else {
+        res.writeHead(404);
+    }
 
+    res.end();
     return {
         props: {
             slug,
