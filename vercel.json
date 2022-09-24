@@ -10,18 +10,5 @@
             "maxDuration": 10
         }
     },
-    "redirects": [
-        {
-            "source": "/:slug",
-            "has": [
-                {
-                    "type": "header",
-                    "key": "host",
-                    "value": "eub.yt"
-                }
-            ],
-            "permanent": true,
-            "destination": "https://eubyt.dev/_subdomains/shortener.eubyt.dev/:slug/"
-        }
-    ]
+    "redirects": []
 }

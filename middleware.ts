@@ -16,7 +16,7 @@ const redirectConfig: Record<
 };
 
 export const config = {
-    matcher: ['/', '/_subdomains/:path'],
+    matcher: ['/:slug', '/_subdomains/:path'],
 };
 
 export default async function middleware(req: NextRequest) {
