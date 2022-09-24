@@ -14,7 +14,8 @@ import (
 )
 
 type UrlShortener struct {
-	Url string
+	Url         string
+	CustomAlias string
 }
 
 func isUrl(s string) bool {
@@ -45,7 +46,6 @@ func save(url string, alias string) bool {
 func getDocument(path string, value string) map[string]interface{} {
 	client, err := util.StartFireStore()
 	if err != nil {
-		println(err.Error())
 		return nil
 	}
 	defer client.Close()
@@ -53,7 +53,6 @@ func getDocument(path string, value string) map[string]interface{} {
 	defer iter.Stop()
 	doc, err := iter.Next()
 	if err != nil {
-		println(err.Error())
 		return nil
 	}
 	return doc.Data()
@@ -63,8 +62,6 @@ func getDocument(path string, value string) map[string]interface{} {
 
 // Based on https://github.com/eubyt/go.eub.yt
 func Handler(w http.ResponseWriter, r *http.Request) {
-	println(os.Getenv("NODE_EVN"))
-
 	if os.Getenv("NODE_EVN") == "production" {
 		w.Header().Set("access-control-allow-credentials", "true")
 		w.Header().Set("access-control-allow-origin", "https://www.eub.yt")
@@ -94,6 +91,12 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		if !isUrl(urlShortener.Url) {
 			middleware.JsonHandler(w, r, &middleware.Response{Message: "Invalid URL."}, http.StatusUnprocessableEntity, false)
 			return
+		}
+
+		if urlShortener.CustomAlias != "" {
+			if getDocument("alias", urlShortener.CustomAlias) == nil {
+				alias = urlShortener.CustomAlias
+			}
 		}
 
 		document := getDocument("url", urlShortener.Url)

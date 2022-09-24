@@ -24,6 +24,7 @@ const getServerSideProps: GetServerSideProps<{
     if (data?.url) {
         res.writeHead(301, {
             Location: data.url,
+            'Cache-Control': 'max-age=0, s-maxage=604800, stale-while-revalidate, public',
         });
     } else {
         res.writeHead(307, {

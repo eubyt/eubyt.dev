@@ -17,7 +17,6 @@ func StartFireStore() (*firestore.Client, error) {
 	if err != nil {
 		return nil, fmt.Errorf("error initializing app: %v", err)
 	}
-	println("Firebase started")
 
 	clientFirestore, err := app.Firestore(context.Background())
 	if err != nil {

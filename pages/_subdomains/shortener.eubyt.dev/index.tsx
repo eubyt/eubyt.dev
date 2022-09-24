@@ -13,6 +13,7 @@ const ButtonSwitchTheme = () => (
 const Shortener = () => {
     const [error, setError] = React.useState<string | undefined>(undefined);
     const [alias, setAlias] = React.useState<string | undefined>(undefined);
+    const [openCustomAlias, setOpenCustomAlias] = React.useState<boolean>(false);
     const [loading, setLoading] = React.useState<boolean>(false);
 
     const copyToClipboard = (text: string) => {
@@ -44,10 +45,16 @@ const Shortener = () => {
 
         const form = e.currentTarget;
         const url = form.url.value as string;
+        const customAlias = form?.customAlias?.value as string;
         if (!url || loading) return;
 
         if (!validUrl(url)) {
             setError('A URL não é válida.');
+            return;
+        }
+
+        if (customAlias && !/^[a-zA-Z0-9]+$/.test(customAlias)) {
+            setError('O alias deve conter apenas letras e números.');
             return;
         }
 
@@ -64,6 +71,7 @@ const Shortener = () => {
             },
             body: JSON.stringify({
                 url,
+                customAlias,
             }),
         });
 
@@ -156,9 +164,35 @@ const Shortener = () => {
                                 )}
                             </div>
                             <div>
+                                {!alias && openCustomAlias && (
+                                    <div className="mt-6 rounded-md bg-zinc-200 px-4 dark:bg-stone-800">
+                                        <input
+                                            type="text"
+                                            name="customAlias"
+                                            placeholder="my_alias"
+                                            autoComplete="off"
+                                            title="Coloque uma alias customizada."
+                                            disabled={loading || alias !== undefined}
+                                            className="w-full rounded-md bg-zinc-200 py-4 text-zinc-800 focus:border-transparent focus:bg-transparent focus:outline-none dark:bg-stone-800 dark:text-white"
+                                        />
+                                    </div>
+                                )}
+
+                                {!alias && !openCustomAlias && (
+                                    <button
+                                        title="Clique para definir um alias customizado."
+                                        onClick={() => {
+                                            setOpenCustomAlias(true);
+                                        }}
+                                        className="mt-6 w-full cursor-pointer rounded-md bg-zinc-200 py-4 text-zinc-800 hover:bg-gray-300 dark:bg-stone-800 dark:text-white dark:hover:bg-stone-600"
+                                    >
+                                        Definir alias customizada
+                                    </button>
+                                )}
+
                                 {alias && (
                                     <button
-                                        title="Clique para encurtar a URL."
+                                        title="Clique para encurtar um novo URL."
                                         onClick={() => {
                                             window.location.reload();
                                         }}
