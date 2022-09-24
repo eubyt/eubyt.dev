@@ -16,46 +16,46 @@ const redirectConfig: Record<
 };
 
 export const config = {
-    matcher: ['/:slug', '/_subdomains/:path'],
+    matcher: ['/:slug'],
 };
 
 export default async function middleware(req: NextRequest) {
     const url = req.nextUrl;
 
-    const hostList = (req.headers.get('host') ?? 'localhost').split('.');
-    const domainName = hostList.length > 2 ? hostList[1] : hostList[0];
-    const subdomain = hostList.length > 2 ? hostList[0] : false;
+    // Const hostList = (req.headers.get('host') ?? 'localhost').split('.');
+    // const domainName = hostList.length > 2 ? hostList[1] : hostList[0];
+    // const subdomain = hostList.length > 2 ? hostList[0] : false;
 
-    console.log({
-        subdomain,
-        domainName,
-        href: req.nextUrl.href,
-        pathname: url.pathname,
-    });
+    // console.log({
+    //     subdomain,
+    //     domainName,
+    //     href: req.nextUrl.href,
+    //     pathname: url.pathname,
+    // });
 
-    if (process.env.NODE_ENV.toLowerCase() !== 'production') {
-        return NextResponse.next();
-    }
+    // if (process.env.NODE_ENV.toLowerCase() !== 'production') {
+    //     return NextResponse.next();
+    // }
 
-    if (url.pathname.startsWith(`/_subdomains`) || url.pathname.startsWith(`/index`)) {
-        url.pathname = `/404`;
-        return NextResponse.rewrite(url);
-    }
+    // if (url.pathname.startsWith(`/_subdomains`) || url.pathname.startsWith(`/index`)) {
+    //     url.pathname = `/404`;
+    //     return NextResponse.rewrite(url);
+    // }
 
-    switch (domainName) {
-        case 'eubyt':
-            if (subdomain && redirectConfig[subdomain]) {
-                url.pathname = `/_subdomains/${redirectConfig[subdomain].pathName}${url.pathname}`;
-            }
+    // switch (domainName) {
+    //     case 'eubyt':
+    //         if (subdomain && redirectConfig[subdomain]) {
+    //             url.pathname = `/_subdomains/${redirectConfig[subdomain].pathName}${url.pathname}`;
+    //         }
 
-            break;
-        case 'eub':
-            url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}`;
+    //         break;
+    //     case 'eub':
+    //         url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}`;
 
-            break;
-        default:
-            return NextResponse.next();
-    }
+    //         break;
+    //     default:
+    //         return NextResponse.next();
+    // }
 
-    return NextResponse.rewrite(url);
+    return NextResponse.rewrite('/index');
 }
