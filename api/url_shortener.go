@@ -8,6 +8,7 @@ import (
 	"net/url"
 	"os"
 	"regexp"
+	"strings"
 	"time"
 
 	middleware "eubyt.dev/api/middlewares"
@@ -68,7 +69,7 @@ func getDocument(path string, value string) map[string]interface{} {
 
 // Based on https://github.com/eubyt/go.eub.yt
 func Handler(w http.ResponseWriter, r *http.Request) {
-	if os.Getenv("NODE_EVN") == "production" {
+	if strings.ToLower(os.Getenv("NODE_EVN")) == "production" {
 		w.Header().Set("access-control-allow-credentials", "true")
 		w.Header().Set("access-control-allow-origin", "https://www.eub.yt")
 		w.Header().Set("access-control-allow-methods", "GET, POST, OPTIONS")
