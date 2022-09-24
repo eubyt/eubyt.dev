@@ -50,7 +50,11 @@ export default async function middleware(req: NextRequest) {
 
             break;
         case 'eub':
-            url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}${url.pathname}`;
+            if (url.pathname === '/') {
+                url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}`;
+            } else {
+                url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}/${url.pathname}/`;
+            }
 
             break;
         default:
