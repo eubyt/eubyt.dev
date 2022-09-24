@@ -126,7 +126,8 @@ const Shortener = () => {
                                     URL Shortener | eub.yt 🔗
                                 </h1>
                                 <p className="text-zinc-800 dark:text-white">
-                                    Encurte suas URLs com apenas um clique.
+                                    Encurte suas URLs com apenas um clique. Esse é um projeto
+                                    pessoal e pode ser utilizado 😀
                                 </p>
                             </div>
                             <>
