@@ -34,6 +34,7 @@ export default async function middleware(req: NextRequest) {
         subdomain,
         domainName,
         href: req.nextUrl.href,
+        pathname: url.pathname,
     });
 
     if (url.pathname.startsWith(`/_subdomains`) || url.pathname.startsWith(`/index`)) {
@@ -49,7 +50,7 @@ export default async function middleware(req: NextRequest) {
 
             break;
         case 'eub':
-            url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}${url.pathname}`;
+            url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}/${url.pathname}`;
 
             break;
         default:
