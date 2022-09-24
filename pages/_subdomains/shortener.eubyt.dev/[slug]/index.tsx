@@ -26,7 +26,9 @@ const getServerSideProps: GetServerSideProps<{
             Location: data.url,
         });
     } else {
-        res.writeHead(404);
+        res.writeHead(301, {
+            Location: 'https://www.eub.yt/',
+        });
     }
 
     res.end();

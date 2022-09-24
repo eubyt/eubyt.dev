@@ -16,7 +16,7 @@ const redirectConfig: Record<
 };
 
 export const config = {
-    matcher: ['/([a-zA-Z0-9]+)', '/_subdomains/:path'],
+    matcher: ['/', '/([a-zA-Z0-9]+)', '/_subdomains/:path'],
 };
 
 export async function middleware(req: NextRequest) {
