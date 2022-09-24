@@ -20,14 +20,15 @@ const Shortener = () => {
 
     const handlerShortener = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const form = e.currentTarget;
-        const url = form.url.value as string;
-        if (!url || loading) return;
 
         if (alias !== undefined) {
             copyToClipboard(alias);
             return;
         }
+
+        const form = e.currentTarget;
+        const url = form.url.value as string;
+        if (!url || loading) return;
 
         setLoading(true);
 
