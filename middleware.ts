@@ -16,7 +16,7 @@ const redirectConfig: Record<
 };
 
 export const config = {
-    matcher: ['/:slug'],
+    matcher: '/:slug',
 };
 
 export default async function middleware(req: NextRequest) {
@@ -57,5 +57,6 @@ export default async function middleware(req: NextRequest) {
     //         return NextResponse.next();
     // }
 
-    return NextResponse.rewrite('/index');
+    url.pathname = '/index';
+    return NextResponse.rewrite(url);
 }
