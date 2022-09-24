@@ -66,6 +66,11 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("access-control-allow-origin", "https://www.eub.yt")
 	w.Header().Set("cross-origin-resource-policy", "cross-origin")
 
+	if r.Method == "OPTIONS" {
+		w.WriteHeader(http.StatusNoContent)
+		return
+	}
+
 	if r.Method == "POST" {
 		rand.Seed(time.Now().UnixNano())
 		decoder := json.NewDecoder(r.Body)
