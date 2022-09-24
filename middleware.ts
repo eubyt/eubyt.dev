@@ -16,7 +16,7 @@ const redirectConfig: Record<
 };
 
 export const config = {
-    matcher: ['/', '/_subdomains/:path'],
+    matcher: ['/', '/:path', '/_subdomains/:path'],
 };
 
 export default async function middleware(req: NextRequest) {
@@ -50,12 +50,7 @@ export default async function middleware(req: NextRequest) {
 
             break;
         case 'eub':
-            if (url.pathname === '/') {
-                url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}`;
-            } else {
-                url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}?slug=${url.pathname}`;
-            }
-
+            url.pathname = '/index';
             break;
         default:
             return NextResponse.next();
