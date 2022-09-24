@@ -53,7 +53,7 @@ export default async function middleware(req: NextRequest) {
             if (url.pathname === '/') {
                 url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}`;
             } else {
-                url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}/${url.pathname}/`;
+                url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}?slug=${url.pathname}`;
             }
 
             break;
