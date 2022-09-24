@@ -64,6 +64,7 @@ func getDocument(path string, value string) map[string]interface{} {
 func Handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("access-control-allow-credentials", "true")
 	w.Header().Set("access-control-allow-origin", "https://www.eub.yt")
+	w.Header().Set("cross-origin-resource-policy", "cross-origin")
 
 	if r.Method == "POST" {
 		rand.Seed(time.Now().UnixNano())
