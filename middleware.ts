@@ -16,15 +16,11 @@ const redirectConfig: Record<
 };
 
 export const config = {
-    matcher: ['/*', '/_subdomains/:path', '/_subdomains/:path/*'],
+    matcher: ['/', '/_subdomains/:path'],
 };
 
 export default async function middleware(req: NextRequest) {
     const url = req.nextUrl;
-
-    if (process.env.NODE_ENV.toLowerCase() !== 'production') {
-        return NextResponse.next();
-    }
 
     const hostList = (req.headers.get('host') ?? 'localhost').split('.');
     const domainName = hostList.length > 2 ? hostList[1] : hostList[0];
@@ -36,6 +32,10 @@ export default async function middleware(req: NextRequest) {
         href: req.nextUrl.href,
         pathname: url.pathname,
     });
+
+    if (process.env.NODE_ENV.toLowerCase() !== 'production') {
+        return NextResponse.next();
+    }
 
     if (url.pathname.startsWith(`/_subdomains`) || url.pathname.startsWith(`/index`)) {
         url.pathname = `/404`;
@@ -50,7 +50,7 @@ export default async function middleware(req: NextRequest) {
 
             break;
         case 'eub':
-            url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}/${url.pathname}`;
+            url.pathname = `/_subdomains/${redirectConfig.shortener.pathName}${url.pathname}`;
 
             break;
         default:
