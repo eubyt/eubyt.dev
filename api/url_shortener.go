@@ -63,7 +63,7 @@ func getDocument(path string, value string) map[string]interface{} {
 // Based on https://github.com/eubyt/go.eub.yt
 func Handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("access-control-allow-credentials", "true")
-	w.Header().Set("access-control-allow-origin", "*")
+	w.Header().Set("access-control-allow-origin", "www.eub.yt")
 	w.Header().Set("access-control-allow-methods", "GET, POST, OPTIONS")
 	w.Header().Set("access-control-allow-headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With")
 	w.Header().Set("cross-origin-resource-policy", "cross-origin")
