@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"regexp"
 	"time"
 
 	middleware "eubyt.dev/api/middlewares"
@@ -21,6 +22,11 @@ type UrlShortener struct {
 func isUrl(s string) bool {
 	u, err := url.ParseRequestURI(s)
 	return err == nil && u.Scheme != "" && u.Host != ""
+}
+
+func isAlias(alias string) bool {
+	regexTest := regexp.MustCompile(`^[A-zZ0-9_]*$`)
+	return regexTest.MatchString(alias)
 }
 
 func save(url string, alias string) bool {
@@ -94,6 +100,11 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		if urlShortener.CustomAlias != "" {
+			if !isAlias(urlShortener.CustomAlias) {
+				middleware.JsonHandler(w, r, &middleware.Response{Message: "Invalid alias."}, http.StatusUnprocessableEntity, false)
+				return
+			}
+
 			if getDocument("alias", urlShortener.CustomAlias) == nil {
 				alias = urlShortener.CustomAlias
 			}
