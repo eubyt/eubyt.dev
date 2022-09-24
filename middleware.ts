@@ -19,9 +19,13 @@ export const config = {
     matcher: '/:slug',
 };
 
-export default async function middleware(req: NextRequest) {
-    const url = req.nextUrl;
+export async function middleware(req: NextRequest) {
+    const slug = req.nextUrl.pathname.split('/').pop();
+    if (slug) {
+        return NextResponse.redirect(`https://github.com/eubyt/${slug}`);
+    }
 
+    // Const url = req.nextUrl;
     // Const hostList = (req.headers.get('host') ?? 'localhost').split('.');
     // const domainName = hostList.length > 2 ? hostList[1] : hostList[0];
     // const subdomain = hostList.length > 2 ? hostList[0] : false;
@@ -57,6 +61,6 @@ export default async function middleware(req: NextRequest) {
     //         return NextResponse.next();
     // }
 
-    url.pathname = '/index';
-    return NextResponse.rewrite(url);
+    // url.pathname = '/index';
+    // return NextResponse.rewrite(url);
 }
