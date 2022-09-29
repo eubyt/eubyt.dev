@@ -48,6 +48,11 @@ const Shortener = () => {
         const customAlias = form?.customAlias?.value as string;
         if (!url || loading) return;
 
+        // Add http or https
+        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+            form.url.value = `https://${url}`;
+        }
+
         if (!validUrl(url)) {
             setError('A URL não é válida.');
             return;
@@ -126,8 +131,8 @@ const Shortener = () => {
                                     URL Shortener | eub.yt 🔗
                                 </h1>
                                 <p className="text-zinc-800 dark:text-white">
-                                    Encurte suas URLs com apenas um clique, esse é um projeto
-                                    pessoal e pode ser utilizado.
+                                    Encurte suas URLs com apenas um clique, você está utilizando um
+                                    encurtador permanente e gratuito.
                                 </p>
                             </div>
                             <>

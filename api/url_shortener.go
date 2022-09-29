@@ -96,6 +96,11 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
+		// Check URL Https
+		if !strings.HasPrefix(urlShortener.Url, "https://") {
+			urlShortener.Url = "https://" + urlShortener.Url
+		}
+
 		if !isUrl(urlShortener.Url) {
 			middleware.JsonHandler(w, r, &middleware.Response{Message: "Invalid URL."}, http.StatusUnprocessableEntity, false)
 			return
