@@ -1,48 +1,49 @@
 {
-    "name": "@eubyt/portfolio",
-    "version": "0.1.0",
-    "description": "Meu portfolio e repositório pessoal na web.",
-    "scripts": {
-        "setup": "yarn vercel login && yarn vercel link",
-        "start": "yarn vercel dev --debug",
-        "dev": "yarn start",
-        "deploy": "yarn vercel",
-        "deploy:prod": "yarn vercel --prod",
-        "lint": "next lint"
-    },
-    "dependencies": {
-        "next": "12.2.5",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "react-icons": "^4.4.0"
-    },
-    "devDependencies": {
-        "@next/eslint-plugin-next": "^12.3.0",
-        "@types/node": "18.7.15",
-        "@types/react": "18.0.18",
-        "@types/react-dom": "18.0.6",
-        "@typescript-eslint/eslint-plugin": ">=5.31.0",
-        "@typescript-eslint/parser": ">=5.31.0",
-        "autoprefixer": "^10.4.8",
-        "eslint": ">=8.0.0",
-        "eslint-config-next": "^12.3.0",
-        "eslint-config-prettier": "^8.5.0",
-        "eslint-config-xo": "^0.42.0",
-        "eslint-config-xo-typescript": "^0.53.0",
-        "eslint-plugin-react": "^7.31.8",
-        "eslint-plugin-tailwindcss": "^3.6.1",
-        "postcss": "^8.4.16",
-        "prettier": "^2.7.1",
-        "tailwindcss": "^3.1.8",
-        "typescript": ">=4.4",
-        "vercel": "^28.2.5"
-    },
-    "engines": {
-        "node": ">=16.0.0",
-        "yarn": ">=1.22.0"
-    },
-    "resolutions": {
-        "**/package-json/got": "12.3.1",
-        "**/package-json": "~8.1.0"
-    }
+  "name": "@eubyt/portfolio",
+  "version": "0.1.0",
+  "description": "Meu portfolio e repositório pessoal na web.",
+  "scripts": {
+    "vercel-build": "next build",
+    "setup": "yarn vercel login && yarn vercel link",
+    "start": "yarn vercel dev --debug",
+    "dev": "yarn start",
+    "deploy": "yarn vercel",
+    "deploy:prod": "yarn vercel --prod",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "12.2.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.4.0"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^12.3.0",
+    "@types/node": "18.7.15",
+    "@types/react": "18.0.18",
+    "@types/react-dom": "18.0.6",
+    "@typescript-eslint/eslint-plugin": ">=5.31.0",
+    "@typescript-eslint/parser": ">=5.31.0",
+    "autoprefixer": "^10.4.8",
+    "eslint": ">=8.0.0",
+    "eslint-config-next": "^12.3.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-xo": "^0.42.0",
+    "eslint-config-xo-typescript": "^0.53.0",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-tailwindcss": "^3.6.1",
+    "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
+    "tailwindcss": "^3.1.8",
+    "typescript": ">=4.4",
+    "vercel": "^28.2.5"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "yarn": ">=1.22.0"
+  },
+  "resolutions": {
+    "**/package-json/got": "12.3.1",
+    "**/package-json": "~8.1.0"
+  }
 }

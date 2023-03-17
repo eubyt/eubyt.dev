@@ -3,6 +3,7 @@ import React from 'react';
 import { ThemeContextProvider } from '../../../context/theme-color';
 import SwitchTheme from '../../../components/switch-theme';
 import Card from '../../../components/card';
+import Input from '../../../components/input';
 
 const ButtonSwitchTheme = () => (
     <div className="flex w-full flex-col items-end p-6 xl:absolute">
@@ -49,7 +50,7 @@ const Shortener = () => {
         if (!url || loading) return;
 
         // Add http or https
-        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        if (!url.startsWith('https://')) {
             form.url.value = `https://${url}`;
         }
 
@@ -58,7 +59,7 @@ const Shortener = () => {
             return;
         }
 
-        if (customAlias && !/^[a-zA-Z0-9]+$/.test(customAlias)) {
+        if (customAlias && !/^[A-zZ0-9_]+$/.test(customAlias)) {
             setError('O alias deve conter apenas letras e números.');
             return;
         }
@@ -157,28 +158,22 @@ const Shortener = () => {
                                         {alias}
                                     </p>
                                 ) : (
-                                    <input
-                                        type="text"
+                                    <Input
                                         name="url"
                                         placeholder="URL do site que deseja encurtar."
-                                        autoComplete="off"
                                         title="Coloque a URL do site que deseja encurtar."
                                         disabled={loading || alias !== undefined}
-                                        className="w-full rounded-md bg-zinc-200 py-4 text-zinc-800 focus:border-transparent focus:bg-transparent focus:outline-none dark:bg-stone-800 dark:text-white"
                                     />
                                 )}
                             </div>
                             <div>
                                 {!alias && openCustomAlias && (
                                     <div className="mt-6 rounded-md bg-zinc-200 px-4 dark:bg-stone-800">
-                                        <input
-                                            type="text"
+                                        <Input
                                             name="customAlias"
-                                            placeholder="my_alias"
-                                            autoComplete="off"
+                                            placeholder="Alias"
                                             title="Coloque uma alias customizada."
                                             disabled={loading || alias !== undefined}
-                                            className="w-full rounded-md bg-zinc-200 py-4 text-zinc-800 focus:border-transparent focus:bg-transparent focus:outline-none dark:bg-stone-800 dark:text-white"
                                         />
                                     </div>
                                 )}

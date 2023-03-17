@@ -6,7 +6,6 @@ import (
 	"math/rand"
 	"net/http"
 	"net/url"
-	"os"
 	"regexp"
 	"strings"
 	"time"
@@ -30,7 +29,7 @@ func isAlias(alias string) bool {
 	return regexTest.MatchString(alias)
 }
 
-func save(url string, alias string) bool {
+func save(url string, alias string, userIP string) bool {
 	client, err := util.StartFireStore()
 	if err != nil {
 		println(err.Error())
@@ -40,6 +39,7 @@ func save(url string, alias string) bool {
 	_, _, err = client.Collection("urls").Add(context.Background(), map[string]interface{}{
 		"url":        url,
 		"alias":      alias,
+		"userIP":     userIP,
 		"created_at": time.Now(),
 	})
 	if err != nil {
@@ -65,25 +65,16 @@ func getDocument(path string, value string) map[string]interface{} {
 	return doc.Data()
 }
 
-//doc.Data()["url"].(string)
-
 // Based on https://github.com/eubyt/go.eub.yt
-func Handler(w http.ResponseWriter, r *http.Request) {
-	if strings.ToLower(os.Getenv("NODE_EVN")) != "development" {
-		println("production CORS")
-		w.Header().Set("access-control-allow-credentials", "true")
-		w.Header().Set("access-control-allow-origin", "https://www.eub.yt")
-		w.Header().Set("access-control-allow-methods", "GET, POST, OPTIONS")
-		w.Header().Set("access-control-allow-headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With")
-		w.Header().Set("cross-origin-resource-policy", "cross-origin")
-	}
+func HandlerUrlShortener(w http.ResponseWriter, r *http.Request) {
+	var clientIp string = util.GetIp(r)
+	util.Cors(w)
 
-	if r.Method == "OPTIONS" {
+	switch r.Method {
+	case "OPTIONS":
 		w.WriteHeader(http.StatusNoContent)
-		return
-	}
 
-	if r.Method == "POST" {
+	case "POST":
 		rand.Seed(time.Now().UnixNano())
 		decoder := json.NewDecoder(r.Body)
 
@@ -123,16 +114,13 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		if save(urlShortener.Url, alias) {
+		if save(urlShortener.Url, alias, clientIp) {
 			middleware.JsonHandler(w, r, &middleware.Response{Message: "URL saved successfully.", Data: map[string]string{"alias": alias}}, http.StatusCreated, true)
 		} else {
 			middleware.JsonHandler(w, r, &middleware.Response{Message: "Error saving URL."}, http.StatusInternalServerError, false)
 		}
 
-		return
-	}
-
-	if r.Method == "GET" {
+	case "GET":
 		alias := r.URL.Query().Get("alias")
 		if alias == "" {
 			middleware.JsonHandler(w, r, &middleware.Response{Message: "Invalid alias."}, http.StatusUnprocessableEntity, false)
@@ -146,8 +134,8 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		middleware.JsonHandler(w, r, &middleware.Response{Message: "URL found.", Data: map[string]string{"url": document["url"].(string)}}, http.StatusOK, true)
-		return
-	}
 
-	w.WriteHeader(http.StatusMethodNotAllowed)
+	default:
+		w.WriteHeader(http.StatusMethodNotAllowed)
+	}
 }

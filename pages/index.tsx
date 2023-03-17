@@ -120,7 +120,7 @@ const CardProjects = () => (
         </div>
         <a
             className="flex flex-col text-zinc-800 dark:text-white"
-            href="https://keybase.io/encrypt#eubyt"
+            href="https://eub.yt"
             target="_blank"
             rel="noopener noreferrer"
         >
