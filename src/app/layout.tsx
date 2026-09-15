@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
+import { GridVerticalGuides } from "@/components/grid";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider, ThemeScript } from "@/providers/theme";
@@ -43,10 +44,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <ThemeScript />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="relative min-h-full w-full overflow-x-hidden flex flex-col">
         <ThemeProvider>
           <TooltipProvider>
-            {children}
+            <GridVerticalGuides />
+            <div className="relative z-10 flex min-h-full flex-1 flex-col">
+              {children}
+            </div>
             <ThemeToggle />
           </TooltipProvider>
         </ThemeProvider>

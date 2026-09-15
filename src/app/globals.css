@@ -132,6 +132,62 @@
   }
 }
 
+/* Structural dotted grid lines (athrix.me style) */
+.grid-line-h {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid #00000059;
+  -webkit-mask-image: repeating-linear-gradient(
+    90deg,
+    #000 0 1px,
+    #0000 1px 6px
+  );
+  mask-image: repeating-linear-gradient(90deg, #000 0 1px, #0000 1px 6px);
+}
+
+[data-theme="dark"] .grid-line-h {
+  border-bottom-color: #ffffff47;
+}
+
+@media (min-width: 640px) {
+  .grid-line-h {
+    width: 100vw;
+    left: calc(50% - 50vw);
+  }
+}
+
+.grid-line-v {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-right: 1px solid #00000059;
+  -webkit-mask-image: repeating-linear-gradient(#000 0 1px, #0000 1px 6px);
+  mask-image: repeating-linear-gradient(#000 0 1px, #0000 1px 6px);
+}
+
+[data-theme="dark"] .grid-line-v {
+  border-right-color: #ffffff47;
+}
+
+.grid-intersection {
+  pointer-events: none;
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background-color: #00000080;
+}
+
+[data-theme="dark"] .grid-intersection {
+  background-color: #ffffff80;
+}
+
 /* View Transition API — circular wipe on theme change */
 :root {
   --theme-view-transition-ease: cubic-bezier(0.19, 1, 0.22, 1);
