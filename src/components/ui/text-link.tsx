@@ -9,6 +9,7 @@ const textLinkVariants = cva(
             size: {
                 icon: "inline-flex size-8 items-center justify-center [&_svg]:size-4",
                 text: "inline-flex items-center gap-1.5 text-xs sm:text-sm",
+                caption: "inline-flex items-center gap-1.5 text-caption",
             },
         },
         defaultVariants: {
@@ -32,7 +33,7 @@ function TextLink({
     return (
         <a
             data-slot="text-link"
-            className={cn(textLinkVariants({ size, className }))}
+            className={cn(textLinkVariants({ size }), className)}
             {...(external
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : undefined)}

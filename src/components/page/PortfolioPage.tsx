@@ -7,6 +7,7 @@ import { AboutBio } from "@/components/page/about-bio";
 import { FolioShell } from "@/components/page/folio-shell";
 import { GithubContributions } from "@/components/page/github-contributions";
 import { Hobbies } from "@/components/page/hobbies-teaser";
+import { PersonalProjects } from "@/components/page/personal-projects";
 import { Skills, type SkillGroup } from "@/components/page/skills";
 import { EmailLink } from "@/components/ui/email-link";
 import { TextLink } from "@/components/ui/text-link";
@@ -163,6 +164,7 @@ export function PortfolioPage({
             <GithubContributions />
             <Skills groups={skillGroups} />
             <Hobbies />
+            <PersonalProjects />
         </FolioShell>
     );
 }

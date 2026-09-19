@@ -68,7 +68,8 @@ export function FolioShell({ children, leadingNav }: FolioShellProps) {
                                 <TextLink
                                     href={SOURCE_CODE_URL}
                                     external
-                                    className="shrink-0 text-caption"
+                                    size="caption"
+                                    className="shrink-0"
                                 >
                                     {t("footer.sourceCode")}
                                 </TextLink>

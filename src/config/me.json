@@ -3,6 +3,9 @@
     "handle": "eubyt",
     "role": "Software developer focused on back-end systems",
     "githubUsername": "eubyt",
+    "sites": {
+        "tools": "https://tools.eubyt.dev"
+    },
     "emails": [
         { "address": "adrian@eubyt.dev", "primary": true },
         { "address": "adriancf@outlook.com.br", "primary": false }

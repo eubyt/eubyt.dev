@@ -32,6 +32,10 @@
         "label": "Hobbies",
         "cta": "See hobbies"
     },
+    "personalProjects": {
+        "label": "Personal projects",
+        "description": "Developer tools at"
+    },
     "footer": {
         "credit": "Built with Next.js, on Sep 19, 2026",
         "sourceCode": "Source code"

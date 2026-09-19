@@ -1,5 +1,8 @@
 import type { NextRequest } from "next/server";
+import me from "@/config/me.json";
 import { isLocale, resolveBrowserLocale, type Locale } from "@/lib/locale";
+
+export const TOOLS_ORIGIN = me.sites.tools.replace(/\/+$/, "");
 
 export const TOOLS_PATH_REGEX =
     /^(?:\/([a-zA-Z]{2}(?:-[a-zA-Z]{2})?))?\/tools(?:\/(.*))?$/i;
@@ -14,7 +17,7 @@ export function getToolsOriginFromHost(
     }
 
     if (!host) {
-        return "https://tools.eubyt.dev";
+        return TOOLS_ORIGIN;
     }
 
     const cleanHost = host.split(",")[0].trim();
@@ -23,7 +26,7 @@ export function getToolsOriginFromHost(
         cleanHost.startsWith("127.") ||
         cleanHost.endsWith(".vercel.app")
     ) {
-        return "https://tools.eubyt.dev";
+        return TOOLS_ORIGIN;
     }
 
     const normalizedProto = (proto || "https").split(",")[0].trim();
