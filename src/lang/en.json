@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "site": {
+      "title": "{name}",
+      "titleTemplate": "%s — {name}",
+      "description": "Personal site of {name}."
+    },
+    "home": {
+      "title": "Portfolio — {name}"
+    },
+    "hobby": {
+      "title": "Hobbies"
+    }
+  },
+  "profile": {
+    "nameUnavailable": "Name unavailable",
+    "jobTitleUnavailable": "Title unavailable",
+    "avatarAlt": "Profile photo of {name}",
+    "socialNav": "Social links for contact",
+    "opensInNewTab": "(opens in a new tab)",
+    "aboutLabel": "About"
+  },
+  "skills": {
+    "label": "Skills",
+    "categories": {
+      "languages": "Languages and frameworks",
+      "data": "Data, cloud, and infrastructure",
+      "ecommerce": "E-commerce"
+    }
+  },
+  "hobbies": {
+    "label": "Hobbies",
+    "cta": "See hobbies"
+  },
+  "footer": {
+    "credit": "Built with Next.js, on Sep 19, 2026"
+  },
+  "hobby": {
+    "title": "Hobbies",
+    "back": "Back",
+    "socialsLabel": "Socials"
+  },
+  "language": {
+    "label": "Language",
+    "automatic": "Automatic",
+    "browserLanguage": "Browser language · {language}",
+    "english": "English",
+    "portuguese": "Português",
+    "code": {
+      "en": "EN",
+      "pt": "PT"
+    },
+    "openMenu": "Select language"
+  },
+  "theme": {
+    "light": "light",
+    "dark": "dark",
+    "system": "system",
+    "current": "Current theme is \"{theme}\". Click to cycle.",
+    "toggle": "Toggle theme"
+  },
+  "email": {
+    "copied": "Email copied",
+    "copyFailed": "Could not copy email",
+    "sendTo": "Send email to ",
+    "copy": "Copy email"
+  },
+  "draw": {
+    "enter": "Draw",
+    "exit": "Exit draw mode",
+    "toolbar": "Drawing tools",
+    "toolGroup": "Tool",
+    "colorGroup": "Color",
+    "strokeGroup": "Stroke size",
+    "pen": "Brush",
+    "eraser": "Eraser",
+    "fine": "Fine",
+    "medium": "Medium",
+    "thick": "Thick",
+    "clear": "Clear",
+    "leave": "Exit",
+    "saturationBrightness": "Saturation and brightness",
+    "hue": "Hue",
+    "eyedropper": "Eyedropper",
+    "eyedropperUnavailable": "Eyedropper unavailable",
+    "switchToHex": "Switch to hexadecimal",
+    "switchToRgb": "Switch to RGB",
+    "hexadecimal": "Hexadecimal"
+  },
+  "toast": {
+    "close": "Close toast"
+  },
+  "github": {
+    "label": "GitHub contributions",
+    "commitTooltip": "{count} commits on {month} {day}, {year}",
+    "commitTooltipOne": "1 commit on {month} {day}, {year}",
+    "commitTooltipZero": "0 commits on {month} {day}, {year}",
+    "labels": {
+      "months": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "monthsLong": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "weekdays": ["", "Mon", "", "Wed", "", "Fri", ""]
+    }
+  }
+}

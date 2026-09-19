@@ -1,0 +1,12 @@
+# Content Signals — https://contentsignals.org/
+# search: building a search index and providing search results (not AI summaries).
+# ai-input: real-time use as input to AI models (e.g. RAG / generative answers).
+# ai-train: training or fine-tuning AI models.
+# Restrictions expressed via Content Signals are express reservations of rights
+# under Article 4 of EU Directive 2019/790 (DSM).
+
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+Sitemap: https://eubyt.dev/sitemap.xml

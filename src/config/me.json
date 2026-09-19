@@ -1,0 +1,164 @@
+{
+  "name": "Adrian César",
+  "handle": "eubyt",
+  "role": "Software developer focused on back-end systems",
+  "githubUsername": "eubyt",
+  "emails": [
+    { "address": "adrian@eubyt.dev", "primary": true },
+    { "address": "adriancf@outlook.com.br", "primary": false }
+  ],
+  "location": "Brazilian",
+  "skills": [
+    {
+      "category": "languages",
+      "skills": [
+        "TypeScript",
+        "JavaScript",
+        "Node.js",
+        "NestJS",
+        "Next.js",
+        "Go",
+        "GraphQL"
+      ]
+    },
+    {
+      "category": "data",
+      "skills": [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Google Cloud",
+        "AWS"
+      ]
+    },
+    {
+      "category": "ecommerce",
+      "skills": ["Shopify"]
+    }
+  ],
+  "socials": {
+    "portfolio": [
+      { "network": "linkedin", "href": "https://www.linkedin.com/in/eubyt" },
+      { "network": "github", "href": "https://github.com/eubyt" },
+      { "network": "instagram", "href": "https://www.instagram.com/eubyt" },
+      {
+        "network": "discord",
+        "href": "https://discord.com/users/430501630023041034"
+      }
+    ],
+    "hobby": [
+      { "network": "twitter", "href": "https://x.com/eubyt" },
+      { "network": "twitch", "href": "https://www.twitch.tv/eubyt" },
+      { "network": "youtube", "href": "https://www.youtube.com/@eubyt" },
+      {
+        "network": "discord",
+        "href": "https://discord.com/users/430501630023041034"
+      },
+      { "network": "github", "href": "https://github.com/eubyt" },
+      { "network": "steam", "href": "https://steamcommunity.com/id/eubyt" },
+      { "network": "instagram", "href": "https://www.instagram.com/eubyt" }
+    ]
+  },
+  "meta": {
+    "en": {
+      "home": {
+        "description": "Portfolio of Adrian César, software developer. Contact via email and social links."
+      },
+      "hobby": {
+        "description": "eubyt handle origin, 9Head, PlanetaCraft BR, and Twitch — personal side outside the portfolio."
+      }
+    },
+    "pt": {
+      "home": {
+        "description": "Portfólio de Adrian César, desenvolvedor de software. Contato por e-mail e redes sociais."
+      },
+      "hobby": {
+        "description": "Origem do handle eubyt, 9Head, PlanetaCraft BR e Twitch — o lado pessoal fora do portfólio."
+      }
+    }
+  },
+  "profile": {
+    "en": {
+      "jobTitle": "Software developer",
+      "tagline": "Personally, I Hate Chess",
+      "about": [
+        "I've spent years building back-end systems and integrations. A lot of the time I don't exactly know what I'm doing — but am I still building, or just creating bugs? I'm not sure.",
+        "My first contact with web development was on the Forumeiro forum. From there, I turned that curiosity into Minecraft servers and work."
+      ]
+    },
+    "pt": {
+      "jobTitle": "Desenvolvedor de software",
+      "tagline": "Pessoalmente, eu odeio xadrez",
+      "about": [
+        "Há anos construindo sistemas back-end e integrações. Muitas vezes eu não sei exatamente o que estou fazendo — mas continuo construindo ou criando bugs? Não sei ao certo.",
+        "Meu primeiro contato com desenvolvimento web foi no fórum da Forumeiro. De lá para cá, transformei essa curiosidade, em servidores de Minecraft e trabalho."
+      ]
+    }
+  },
+  "hobby": {
+    "en": {
+      "teaser": "Outside of all that nonsense, I also have hobbies.",
+      "topics": [
+        {
+          "title": "What is eubyt",
+          "paragraphs": [
+            "I used to go by the username/handle \"unixcf\", but in 2016 I decided to pick one that wouldn't get in the way of creating social accounts. I landed on a mix of \"eu\" (\"I\" in Portuguese) + \"byte\"."
+          ]
+        },
+        {
+          "title": "What is this 9Head thing?",
+          "paragraphs": [
+            "It's a joke around the 5Head emote that was popular on Twitch in 2020. Back then I streamed Dead by Daylight; whenever something funny happened, my friends and I would say 9Head — and we ended up naming our friend group after it.",
+            "It's also the name of my personal Discord server. If you want to join to play or chat, the invite is [discord.gg/278Bx5E5cB](https://discord.gg/278Bx5E5cB). You can catch some of the funny moments on my [YouTube](https://www.youtube.com/@eubyt) — for example [this clip](https://www.youtube.com/watch?v=gzZJ3apZqPg) and [this other one](https://www.youtube.com/watch?v=qq9K_EYe2XM)."
+          ]
+        },
+        {
+          "title": "PlanetaCraft BR",
+          "paragraphs": [
+            "It was a Minecraft server founded by Rubens Flinco, a childhood/teenage friend, around 2014–2016. At the time I built Spigot plugins for it — minigames, infrastructure automation, and payment systems with gateways like PagSeguro.",
+            "Some of those projects are still on my GitHub, like [CHProject](https://github.com/eubyt/CHProject)."
+          ]
+        },
+        {
+          "title": "Twitch",
+          "paragraphs": [
+            "I don't stream often, but sometimes I might be online on [twitch.tv/eubyt](https://www.twitch.tv/eubyt) playing something or just chatting."
+          ]
+        }
+      ]
+    },
+    "pt": {
+      "teaser": "Fora dessas maluquices, também tenho hobbies.",
+      "topics": [
+        {
+          "title": "O que é eubyt",
+          "paragraphs": [
+            "Anteriormente eu utilizava o username/handle de \"unixcf\", porém em 2016 eu resolvi criar um que não seria problemático ao criar contas em redes sociais. Pensei em uma combinação de \"eu\" + \"byte\"."
+          ]
+        },
+        {
+          "title": "O que é a tal da 9Head?",
+          "paragraphs": [
+            "É uma brincadeira com o emote 5Head, que era popular na Twitch em 2020. Nessa época eu fazia lives jogando Dead by Daylight; quando alguma coisa engraçada acontecia, meus amigos e eu falávamos 9Head — e acabamos chamando o nosso grupo de amizade com esse apelido.",
+            "Também é o nome do meu servidor pessoal do Discord. Se quiser entrar para jogar ou conversar, o convite é [discord.gg/278Bx5E5cB](https://discord.gg/278Bx5E5cB). Você pode ver alguns momentos engraçados no meu canal do [YouTube](https://www.youtube.com/@eubyt) — por exemplo [este clipe](https://www.youtube.com/watch?v=gzZJ3apZqPg) e [este outro](https://www.youtube.com/watch?v=qq9K_EYe2XM)."
+          ]
+        },
+        {
+          "title": "PlanetaCraft BR",
+          "paragraphs": [
+            "Foi um servidor de Minecraft que o Rubens Flinco, meu amigo de infância/adolescência, fundou por volta de 2014–2016. Nessa época eu era desenvolvedor de plugins Spigot para o servidor: criamos vários minigames, sistemas de automação de infraestrutura e sistemas de pagamento com gateways como PagSeguro.",
+            "Alguns desses projetos ainda estão no meu GitHub, como o [CHProject](https://github.com/eubyt/CHProject)."
+          ]
+        },
+        {
+          "title": "Twitch",
+          "paragraphs": [
+            "Não faço lives com frequência, mas às vezes posso estar online em [twitch.tv/eubyt](https://www.twitch.tv/eubyt) jogando alguma coisa ou conversando."
+          ]
+        }
+      ]
+    }
+  }
+}

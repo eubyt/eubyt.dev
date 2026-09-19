@@ -46,10 +46,32 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Portfolio type scale (golden proportion) */
+  --text-display: clamp(1.85rem, 4.4vw, 2.25rem);
+  --text-display--line-height: 1.15;
+  --text-role: clamp(1.1rem, 2.9vw, 1.35rem);
+  --text-role--line-height: 1.272;
+  --text-caption: 0.6875rem;
+  --text-caption--line-height: 1.25;
+  --text-body: clamp(0.9375rem, 2.1vw, 1.0625rem);
+  --text-body--line-height: 1.65;
+
+  --font-weight-display: 620;
+  --font-weight-book: 450;
+
+  --tracking-display: -0.045em;
+  --tracking-role: -0.03em;
+
+  --spacing-1.75: 0.4375rem;
+  --container-folio: var(--folio-max);
 }
 
 :root {
   --radius: 0.625rem;
+  --folio-max: 37.5rem;
+  /* Vertical guides + intersection dots sit this far outside the folio column */
+  --folio-outset: 1.5rem;
   --background: hsl(97 4% 100%);
   --foreground: oklch(0.141 0.005 285.823);
   --loader-bg: hsl(97 4% 100%);
@@ -132,6 +154,16 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-in,
+  .fade-in,
+  .zoom-in-95,
+  .theme-toggle-icon {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 /* Structural dotted grid lines (athrix.me style) */
 .grid-line-h {
   pointer-events: none;
@@ -165,14 +197,14 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 0;
-  border-right: 1px solid #00000059;
+  width: 1px;
+  background-color: #00000059;
   -webkit-mask-image: repeating-linear-gradient(#000 0 1px, #0000 1px 6px);
   mask-image: repeating-linear-gradient(#000 0 1px, #0000 1px 6px);
 }
 
 [data-theme="dark"] .grid-line-v {
-  border-right-color: #ffffff47;
+  background-color: #ffffff47;
 }
 
 .grid-intersection {
@@ -264,6 +296,70 @@
 }
 
 @layer components {
+  .github-contributions .react-activity-calendar {
+    color: var(--muted-foreground);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .github-contributions .react-activity-calendar a {
+    color: inherit;
+  }
+
+  .github-contributions .react-activity-calendar__scroll-container {
+    overflow: visible !important;
+    max-width: 100%;
+  }
+
+  .github-contributions .react-activity-calendar__calendar {
+    max-width: 100%;
+  }
+
+  .react-activity-calendar__tooltip {
+    z-index: 60;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .github-contributions .react-activity-calendar rect {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: github-block-fade 0.4s ease forwards;
+      transition: transform 0.15s ease;
+    }
+
+    .github-contributions .github-contrib-count {
+      opacity: 0;
+      pointer-events: none;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+      animation: github-block-fade 0.4s ease forwards;
+    }
+
+    .github-contributions .react-activity-calendar rect:hover {
+      transform: scale(1.35);
+      filter: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .github-contributions .github-contrib-count {
+      pointer-events: none;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+    }
+  }
+
+  @keyframes github-block-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   .theme-toggle-icon {
     @apply size-4;
   }
