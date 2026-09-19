@@ -71,4 +71,4 @@ Interpolação: `{name}`, `{theme}`, etc., preenchida em runtime.
 
 ## Deploy
 
-Qualquer host que rode Next.js (ex.: Vercel). Build: `npm run build`, depois `npm run start` (ou o adaptador do provedor).
+Qualquer host que rode Next.js (ex.: Vercel). Build: `npm run build`, depois `npm run start`.
