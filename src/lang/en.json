@@ -33,7 +33,8 @@
         "cta": "See hobbies"
     },
     "footer": {
-        "credit": "Built with Next.js, on Sep 19, 2026"
+        "credit": "Built with Next.js, on Sep 19, 2026",
+        "sourceCode": "Source code"
     },
     "hobby": {
         "title": "Hobbies",

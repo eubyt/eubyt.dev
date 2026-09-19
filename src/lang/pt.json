@@ -33,7 +33,8 @@
         "cta": "Ver hobbies"
     },
     "footer": {
-        "credit": "Feito em Next.js, em 19 set de 2026"
+        "credit": "Feito em Next.js, em 19 set de 2026",
+        "sourceCode": "Código-fonte"
     },
     "hobby": {
         "title": "Hobbies",

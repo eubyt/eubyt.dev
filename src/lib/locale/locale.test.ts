@@ -7,6 +7,7 @@ import {
 } from "./locale";
 import { translate } from "./messages";
 import en from "@/lang/en.json";
+import pt from "@/lang/pt.json";
 
 describe("resolveBrowserLocale", () => {
     it("maps Portuguese browser languages to pt", () => {
@@ -56,5 +57,10 @@ describe("translate", () => {
 
     it("returns the key when missing", () => {
         expect(translate(en, "missing.key")).toBe("missing.key");
+    });
+
+    it("resolves footer source code labels in both locales", () => {
+        expect(translate(en, "footer.sourceCode")).toBe("Source code");
+        expect(translate(pt, "footer.sourceCode")).toBe("Código-fonte");
     });
 });

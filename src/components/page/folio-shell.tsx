@@ -9,7 +9,10 @@ import {
 } from "@/components/grid";
 import { LanguageToggle } from "@/components/locale";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { TextLink } from "@/components/ui/text-link";
 import { useLocale } from "@/providers/locale";
+
+const SOURCE_CODE_URL = "https://github.com/eubyt/eubyt.dev";
 
 type FolioShellProps = {
     children: ReactNode;
@@ -60,8 +63,15 @@ export function FolioShell({ children, leadingNav }: FolioShellProps) {
                                 {children}
                             </main>
 
-                            <footer className="pt-2 pb-6 text-caption text-muted-foreground sm:pb-10">
+                            <footer className="flex items-center justify-between gap-4 pt-2 pb-6 text-caption text-muted-foreground sm:pb-10">
                                 <p>{t("footer.credit")}</p>
+                                <TextLink
+                                    href={SOURCE_CODE_URL}
+                                    external
+                                    className="shrink-0 text-caption"
+                                >
+                                    {t("footer.sourceCode")}
+                                </TextLink>
                             </footer>
                         </div>
                     </div>
