@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+Site pessoal / portfólio bilíngue (`en` / `pt`): perfil, skills, hobbies e contato.
 
-First, run the development server:
+Stack: **Next.js 16**, **React 19**, **Tailwind CSS 4**, **TypeScript**.
+
+## Como rodar
+
+Requisitos: Node.js 20+ e npm.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000). O locale vem da URL (`/en`, `/pt`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Comando             | Uso                           |
+| ------------------- | ----------------------------- |
+| `npm run dev`       | Servidor de desenvolvimento   |
+| `npm run build`     | Build de produção             |
+| `npm run start`     | Serve o build (`next start`)  |
+| `npm run test`      | Testes (Vitest)               |
+| `npm run format`    | Prettier + ESLint + typecheck |
+| `npm run lint`      | Só ESLint                     |
+| `npm run typecheck` | Typegen + `tsc --noEmit`      |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Antes de considerar uma mudança pronta: testes, depois `npm run format`. O Husky roda o format no commit.
 
-## Learn More
+## Como modificar os dados
 
-To learn more about Next.js, take a look at the following resources:
+Há dois lugares distintos. Não misture.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Conteúdo                                                                     | Onde                                        |
+| ---------------------------------------------------------------------------- | ------------------------------------------- |
+| Conteúdo pessoal (nome, e-mails, bio, hobbies, SEO específico)               | `src/config/me.json`                        |
+| Palavras genéricas da UI (labels, CTAs, a11y, nomes de categorias de skills) | `src/lang/en.json` **e** `src/lang/pt.json` |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Locales: sempre atualize **en** e **pt** quando o texto for localizado.
 
-## Deploy on Vercel
+### `src/config/me.json`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Campo                                                            | Uso                                                                   |
+| ---------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `name`, `handle`, `role`, `githubUsername`, `emails`, `location` | Identidade / contato                                                  |
+| `skills[]`                                                       | Grupos `{ "category": "<id>", "skills": ["…"] }`                      |
+| `socials.portfolio` / `socials.hobby`                            | Listas `{ "network", "href" }`                                        |
+| `meta.<locale>.home\|hobby.description`                          | Meta description das páginas                                          |
+| `profile.<locale>`                                               | `jobTitle`, `tagline`, `about[]`                                      |
+| `hobby.<locale>`                                                 | `teaser`, `topics[]` (`title` + `paragraphs[]`; Markdown em links ok) |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Helpers: `me`, `profileFor`, `hobbyFor`, `metaFor` em `@/lib/site`.
+
+### `src/lang`
+
+Mesma árvore de chaves em `en.json` e `pt.json`. Exemplos: `meta.*`, `profile.aboutLabel`, `skills.categories.<id>`, `hobbies.*`, `footer`, `language`, `theme`.
+
+Interpolação: `{name}`, `{theme}`, etc., preenchida em runtime.
+
+### Fluxos comuns
+
+**Bio / tagline / cargo** — edite só `me.profile.en` e `me.profile.pt`.
+
+**Hobby** — edite `me.hobby.en.topics` e `me.hobby.pt.topics`; ajuste `me.meta.*.hobby.description` se o resumo da página mudar.
+
+**Skills** — adicione nomes em um grupo existente, ou crie um grupo com novo `category`. Novo id → adicione `skills.categories.<id>` nos dois arquivos de lang.
+
+**Social / e-mail / identidade** — campos de topo ou `socials.*` em `me.json`. Redes suportadas: LinkedIn, GitHub, Instagram, Discord, Twitter/X, Twitch, YouTube, Steam (`@/lib/socials`). Rede nova pode exigir ícone/label nesse módulo.
+
+**Copy genérica da UI** — mesma chave em `en.json` e `pt.json`; consuma com `t("path.to.key")` / `translate`, sem hardcode no JSX.
+
+## Deploy
+
+Qualquer host que rode Next.js (ex.: Vercel). Build: `npm run build`, depois `npm run start` (ou o adaptador do provedor).
