@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { LOCALES, resolveBrowserLocale, type Locale } from "@/lib/locale";
+import { getToolsRedirectUrl } from "@/lib/site";
 
 function requestLocale(request: NextRequest): Locale {
     const header = request.headers.get("accept-language");
@@ -16,6 +17,11 @@ function pathnameHasLocale(pathname: string): boolean {
 }
 
 export function proxy(request: NextRequest) {
+    const toolsRedirect = getToolsRedirectUrl(request);
+    if (toolsRedirect) {
+        return NextResponse.redirect(toolsRedirect);
+    }
+
     const { pathname } = request.nextUrl;
 
     if (pathnameHasLocale(pathname)) {

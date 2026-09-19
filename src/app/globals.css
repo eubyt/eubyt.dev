@@ -197,14 +197,14 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 1px;
-    background-color: #00000059;
+    width: 0;
+    border-right: 1px solid #00000059;
     -webkit-mask-image: repeating-linear-gradient(#000 0 1px, #0000 1px 6px);
     mask-image: repeating-linear-gradient(#000 0 1px, #0000 1px 6px);
 }
 
 [data-theme="dark"] .grid-line-v {
-    background-color: #ffffff47;
+    border-right-color: #ffffff47;
 }
 
 .grid-intersection {
