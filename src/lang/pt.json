@@ -1,130 +1,130 @@
 {
-  "meta": {
-    "site": {
-      "title": "{name}",
-      "titleTemplate": "%s — {name}",
-      "description": "Site pessoal de {name}."
+    "meta": {
+        "site": {
+            "title": "{name}",
+            "titleTemplate": "%s — {name}",
+            "description": "Site pessoal de {name}."
+        },
+        "home": {
+            "title": "Portfólio — {name}"
+        },
+        "hobby": {
+            "title": "Hobbies"
+        }
     },
-    "home": {
-      "title": "Portfólio — {name}"
+    "profile": {
+        "nameUnavailable": "Nome indisponível",
+        "jobTitleUnavailable": "Cargo indisponível",
+        "avatarAlt": "Foto de perfil de {name}",
+        "socialNav": "Redes sociais para contato",
+        "opensInNewTab": "(abre em uma nova aba)",
+        "aboutLabel": "Sobre"
+    },
+    "skills": {
+        "label": "Skills",
+        "categories": {
+            "languages": "Linguagens e frameworks",
+            "data": "Banco de Dados e DevOps",
+            "ecommerce": "E-commerce"
+        }
+    },
+    "hobbies": {
+        "label": "Hobbies",
+        "cta": "Ver hobbies"
+    },
+    "footer": {
+        "credit": "Feito em Next.js, em 19 set de 2026"
     },
     "hobby": {
-      "title": "Hobbies"
-    }
-  },
-  "profile": {
-    "nameUnavailable": "Nome indisponível",
-    "jobTitleUnavailable": "Cargo indisponível",
-    "avatarAlt": "Foto de perfil de {name}",
-    "socialNav": "Redes sociais para contato",
-    "opensInNewTab": "(abre em uma nova aba)",
-    "aboutLabel": "Sobre"
-  },
-  "skills": {
-    "label": "Skills",
-    "categories": {
-      "languages": "Linguagens e frameworks",
-      "data": "Banco de Dados e DevOps",
-      "ecommerce": "E-commerce"
-    }
-  },
-  "hobbies": {
-    "label": "Hobbies",
-    "cta": "Ver hobbies"
-  },
-  "footer": {
-    "credit": "Feito em Next.js, em 19 set de 2026"
-  },
-  "hobby": {
-    "title": "Hobbies",
-    "back": "Voltar",
-    "socialsLabel": "Redes sociais"
-  },
-  "language": {
-    "label": "Idioma",
-    "automatic": "Automático",
-    "browserLanguage": "Idioma do navegador · {language}",
-    "english": "English",
-    "portuguese": "Português",
-    "code": {
-      "en": "EN",
-      "pt": "PT"
+        "title": "Hobbies",
+        "back": "Voltar",
+        "socialsLabel": "Redes sociais"
     },
-    "openMenu": "Selecionar idioma"
-  },
-  "theme": {
-    "light": "claro",
-    "dark": "escuro",
-    "system": "sistema",
-    "current": "Tema atual é \"{theme}\". Clique para alternar.",
-    "toggle": "Alternar tema"
-  },
-  "email": {
-    "copied": "E-mail copiado",
-    "copyFailed": "Não foi possível copiar o e-mail",
-    "sendTo": "Enviar e-mail para ",
-    "copy": "Copiar e-mail"
-  },
-  "draw": {
-    "enter": "Desenhar",
-    "exit": "Sair do modo desenho",
-    "toolbar": "Ferramentas de desenho",
-    "toolGroup": "Ferramenta",
-    "colorGroup": "Cor",
-    "strokeGroup": "Tamanho do traço",
-    "pen": "Pincel",
-    "eraser": "Borracha",
-    "fine": "Fino",
-    "medium": "Médio",
-    "thick": "Grosso",
-    "clear": "Limpar",
-    "leave": "Sair",
-    "saturationBrightness": "Saturação e brilho",
-    "hue": "Matiz",
-    "eyedropper": "Conta-gotas",
-    "eyedropperUnavailable": "Conta-gotas indisponível",
-    "switchToHex": "Alternar para hexadecimal",
-    "switchToRgb": "Alternar para RGB",
-    "hexadecimal": "Hexadecimal"
-  },
-  "toast": {
-    "close": "Fechar notificação"
-  },
-  "github": {
-    "label": "Contribuições no GitHub",
-    "commitTooltip": "{count} commits no dia {day} de {month} {year}",
-    "commitTooltipOne": "1 commit no dia {day} de {month} {year}",
-    "commitTooltipZero": "0 commit no dia {day} de {month} {year}",
-    "labels": {
-      "months": [
-        "Jan",
-        "Fev",
-        "Mar",
-        "Abr",
-        "Mai",
-        "Jun",
-        "Jul",
-        "Ago",
-        "Set",
-        "Out",
-        "Nov",
-        "Dez"
-      ],
-      "monthsLong": [
-        "janeiro",
-        "fevereiro",
-        "março",
-        "abril",
-        "maio",
-        "junho",
-        "julho",
-        "agosto",
-        "setembro",
-        "outubro",
-        "novembro",
-        "dezembro"
-      ],
-      "weekdays": ["", "Seg", "", "Qua", "", "Sex", ""]
+    "language": {
+        "label": "Idioma",
+        "automatic": "Automático",
+        "browserLanguage": "Idioma do navegador · {language}",
+        "english": "English",
+        "portuguese": "Português",
+        "code": {
+            "en": "EN",
+            "pt": "PT"
+        },
+        "openMenu": "Selecionar idioma"
+    },
+    "theme": {
+        "light": "claro",
+        "dark": "escuro",
+        "system": "sistema",
+        "current": "Tema atual é \"{theme}\". Clique para alternar.",
+        "toggle": "Alternar tema"
+    },
+    "email": {
+        "copied": "E-mail copiado",
+        "copyFailed": "Não foi possível copiar o e-mail",
+        "sendTo": "Enviar e-mail para ",
+        "copy": "Copiar e-mail"
+    },
+    "draw": {
+        "enter": "Desenhar",
+        "exit": "Sair do modo desenho",
+        "toolbar": "Ferramentas de desenho",
+        "toolGroup": "Ferramenta",
+        "colorGroup": "Cor",
+        "strokeGroup": "Tamanho do traço",
+        "pen": "Pincel",
+        "eraser": "Borracha",
+        "fine": "Fino",
+        "medium": "Médio",
+        "thick": "Grosso",
+        "clear": "Limpar",
+        "leave": "Sair",
+        "saturationBrightness": "Saturação e brilho",
+        "hue": "Matiz",
+        "eyedropper": "Conta-gotas",
+        "eyedropperUnavailable": "Conta-gotas indisponível",
+        "switchToHex": "Alternar para hexadecimal",
+        "switchToRgb": "Alternar para RGB",
+        "hexadecimal": "Hexadecimal"
+    },
+    "toast": {
+        "close": "Fechar notificação"
+    },
+    "github": {
+        "label": "Contribuições no GitHub",
+        "commitTooltip": "{count} commits no dia {day} de {month} {year}",
+        "commitTooltipOne": "1 commit no dia {day} de {month} {year}",
+        "commitTooltipZero": "0 commit no dia {day} de {month} {year}",
+        "labels": {
+            "months": [
+                "Jan",
+                "Fev",
+                "Mar",
+                "Abr",
+                "Mai",
+                "Jun",
+                "Jul",
+                "Ago",
+                "Set",
+                "Out",
+                "Nov",
+                "Dez"
+            ],
+            "monthsLong": [
+                "janeiro",
+                "fevereiro",
+                "março",
+                "abril",
+                "maio",
+                "junho",
+                "julho",
+                "agosto",
+                "setembro",
+                "outubro",
+                "novembro",
+                "dezembro"
+            ],
+            "weekdays": ["", "Seg", "", "Qua", "", "Sex", ""]
+        }
     }
-  }
 }
