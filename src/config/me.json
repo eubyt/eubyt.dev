@@ -6,6 +6,19 @@
     "sites": {
         "tools": "https://tools.eubyt.dev"
     },
+    "projects": [
+        {
+            "id": "tools",
+            "title": "tools.eubyt.dev",
+            "href": "https://tools.eubyt.dev",
+            "repo": "https://github.com/eubyt/tools.eubyt.dev",
+            "localizePath": true,
+            "description": {
+                "en": "Online developer utilities — hash, JWT, Base64, JSON, UUID and more.",
+                "pt": "Utilitários online para desenvolvedores — hash, JWT, Base64, JSON, UUID e mais."
+            }
+        }
+    ],
     "emails": [
         { "address": "adrian@eubyt.dev", "primary": true },
         { "address": "adriancf@outlook.com.br", "primary": false }

@@ -15,5 +15,17 @@ export function metaFor(locale: Locale) {
     return me.meta[locale];
 }
 
+export function projectsFor(locale: Locale) {
+    return me.projects.map((project) => ({
+        id: project.id,
+        title: project.title,
+        href: project.localizePath
+            ? `${project.href.replace(/\/+$/, "")}/${locale}`
+            : project.href,
+        repo: project.repo,
+        description: project.description[locale],
+    }));
+}
+
 export { personJsonLd } from "./person-json-ld";
 export * from "./tools-redirect";

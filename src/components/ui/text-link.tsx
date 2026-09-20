@@ -10,6 +10,7 @@ const textLinkVariants = cva(
                 icon: "inline-flex size-8 items-center justify-center [&_svg]:size-4",
                 text: "inline-flex items-center gap-1.5 text-xs sm:text-sm",
                 caption: "inline-flex items-center gap-1.5 text-caption",
+                role: "inline-flex items-center gap-1.5 text-role font-display tracking-role",
             },
         },
         defaultVariants: {

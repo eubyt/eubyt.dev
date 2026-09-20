@@ -34,7 +34,7 @@
     },
     "personalProjects": {
         "label": "Personal projects",
-        "description": "Developer tools at"
+        "repo": "GitHub"
     },
     "footer": {
         "credit": "Built with Next.js, on Sep 19, 2026",
