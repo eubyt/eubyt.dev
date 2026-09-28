@@ -28,4 +28,3 @@ export function projectsFor(locale: Locale) {
 }
 
 export { personJsonLd } from "./person-json-ld";
-export * from "./tools-redirect";
